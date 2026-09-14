@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- LOGO PLACEHOLDER — Roots of Care, Beauty Services.
+     REPLACE with the official vector logo file supplied by the owner.
+     Keep the same file name so nothing breaks. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 172" width="460" height="172" role="img" aria-label="Roots of Care — Beauty Services">
+  <title>Roots of Care — Beauty Services</title>
+  <rect width="460" height="172" fill="#E9E5DC"/>
+  <text x="232" y="122" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="146" fill="#FBF9F5" letter-spacing="6">RC</text>
+  <text x="230" y="104" text-anchor="middle" font-family="Parisienne, 'Snell Roundhand', 'Brush Script MT', cursive" font-size="62" fill="#7A5647">Roots of Care</text>
+  <text x="234" y="148" text-anchor="middle" font-family="'Josefin Sans', 'Century Gothic', 'Trebuchet MS', sans-serif" font-size="21" fill="#AD9686" letter-spacing="8.5">BEAUTY SERVICES</text>
+</svg>

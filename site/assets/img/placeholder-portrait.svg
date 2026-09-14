@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMAGE PLACEHOLDER — replace with a real photo, 900 x 1200 px -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" role="img" aria-label="Image placeholder">
+  <rect width="900" height="1200" fill="#F4F1EA"/>
+  <rect x="14" y="14" width="872" height="1172" fill="none" stroke="#AD9686" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="450" y="700" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="300" fill="#E4DCD2" letter-spacing="6">RC</text>
+  <text x="450" y="1154" text-anchor="middle" font-family="'Josefin Sans','Century Gothic',sans-serif" font-size="22" fill="#AD9686" letter-spacing="6">PHOTO 900 x 1200</text>
+</svg>

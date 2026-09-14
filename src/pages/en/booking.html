@@ -1,0 +1,173 @@
+<!--META
+title: Book an Appointment — Roots of Care, Montréal
+description: Book your loc, braid, natural hair or henna appointment with Roots of Care in Montréal. A $20 deposit is required; cancellations 24 hours in advance.
+-->
+
+<!-- ========================= PAGE HEAD ========================== -->
+<section class="page-head">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="{{HOME}}">Home</a> &nbsp;/&nbsp; Book</p>
+    <h1>Book an appointment</h1>
+    <p class="lead">
+      Choose your service and a time that works for you. Booking takes about
+      two minutes, and you will get a confirmation straight away.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== POLICY REMINDER ======================== -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="policy-strip reveal">
+      <div>
+        <h3>$20 deposit</h3>
+        <p>
+          A mandatory deposit of <strong>$20</strong> is required in order to
+          book. It is not an extra charge — it comes off the price of your
+          service on the day.
+        </p>
+      </div>
+      <div>
+        <h3>24-hour notice</h3>
+        <p>
+          Cancellations must be made <strong>24 hours in advance</strong>.
+          Cancelling later than that, or not showing up, means the deposit is
+          not refunded. <a href="{{POLICIES}}">Full policies</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     BOOKING CALENDAR AREA
+     ---------------------------------------------------------------------
+     HOW TO CONNECT YOUR CALENDAR (one-time setup, about 5 minutes)
+
+     1. Open your booking platform (Fresha, Square Appointments, Acuity,
+        Setmore, Booksy, Calendly...) and find the section for putting
+        booking on your own website. It is usually called something like
+        "Online booking", "Website widget", "Place to book", "Embed" or
+        "Integrations".
+
+     2. Copy the code it gives you. It will either be a full <iframe ...>
+        block, or a plain link ending in something like
+        https://www.fresha.com/a/your-business-name
+
+     3a. IF YOU HAVE A FULL <iframe> BLOCK:
+         Delete the commented-out <iframe> below and paste yours in its
+         place, inside <div id="booking-embed">. Keep the div itself.
+
+     3b. IF YOU ONLY HAVE A LINK:
+         Uncomment the <iframe> below and replace [[CALENDAR_URL]] with
+         your link. Also replace [[CALENDAR_URL]] in the fallback block
+         further down, so the button works either way.
+
+     4. Make sure the platform is set to collect the $20 deposit at the
+        time of booking — that is configured in the platform, not here.
+
+     IMPORTANT: never apply a CSS transform to #booking-embed or to any of
+     its parent elements; it breaks embedded calendars in some browsers.
+     ===================================================================== -->
+<section class="section" style="padding-top:clamp(1.5rem,3vw,2.5rem)">
+  <div class="wrap">
+
+    <div id="booking-embed" class="booking-embed" hidden>
+      <!-- ▼▼▼ PASTE YOUR BOOKING PLATFORM EMBED CODE HERE ▼▼▼ -->
+      <!--
+      <iframe
+        src="[[CALENDAR_URL]]"
+        title="Online booking — Roots of Care"
+        width="100%"
+        height="800"
+        frameborder="0"
+        loading="lazy"
+        allow="payment"
+        style="border:0; max-width:100%;">
+      </iframe>
+      -->
+      <!-- ▲▲▲ PASTE YOUR BOOKING PLATFORM EMBED CODE HERE ▲▲▲ -->
+    </div>
+
+    <!-- FALLBACK — shown whenever the calendar above is not connected yet
+         or fails to load. Replace [[CALENDAR_URL]] with your booking link. -->
+    <div id="booking-fallback" class="booking-fallback reveal">
+      <p class="eyebrow" style="justify-content:center;display:inline-flex">Booking</p>
+      <h3>Reserve your spot</h3>
+      <p class="measure" style="margin-inline:auto">
+        Booking is handled on our scheduling platform, where you can see live
+        availability, pick your service and pay the $20 deposit.
+      </p>
+
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn" href="[[CALENDAR_URL]]" target="_blank" rel="noopener">
+          Book on our platform
+        </a>
+        <a class="btn btn--ghost" href="{{INSTAGRAM}}" target="_blank" rel="noopener">
+          Book by Instagram DM
+        </a>
+      </div>
+
+      <p class="small" style="margin-top:2rem">
+        Prefer email? Write to <span class="fill">[[EMAIL]]</span>
+        &nbsp;·&nbsp; Or call <span class="fill">[[PHONE]]</span>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====================== WHAT HAPPENS NEXT ===================== -->
+<section class="section section--card">
+  <div class="wrap wrap--narrow reveal">
+    <p class="eyebrow">After you book</p>
+    <h2>What happens next</h2>
+
+    <ol class="steps" style="margin-top:2.5rem">
+      <li class="step">
+        <h3>Confirmation</h3>
+        <p>
+          You get an email or text confirming your service, date and time,
+          along with the studio address.
+        </p>
+      </li>
+      <li class="step">
+        <h3>Reminder</h3>
+        <p>
+          A reminder arrives before your appointment — that is also your last
+          easy moment to reschedule free of charge.
+        </p>
+      </li>
+      <li class="step">
+        <h3>Prepare</h3>
+        <p>
+          Come with clean, product-free hair unless a wash is included. For
+          henna, arrive with clean, oil-free skin.
+          <a href="{{HAIR}}">Full preparation guide</a>.
+        </p>
+      </li>
+      <li class="step">
+        <h3>Your appointment</h3>
+        <p>
+          Arrive a few minutes early. The remaining balance is settled at the
+          end of the appointment, with your $20 deposit already deducted.
+        </p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======================= HELP / CONTACT ======================= -->
+<section class="section">
+  <div class="wrap wrap--narrow center reveal">
+    <h2>Not sure what to book?</h2>
+    <p class="lead measure" style="margin-inline:auto">
+      Describe your hair or the design you have in mind and we will tell you
+      exactly which service fits — and roughly how long it will take.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn--ghost" href="{{CONTACT}}">Send a message</a>
+      <a class="btn btn--ghost" href="{{SERVICES}}">Browse services</a>
+    </div>
+  </div>
+</section>

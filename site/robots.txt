@@ -1,0 +1,5 @@
+# robots.txt — Roots of Care
+User-agent: *
+Allow: /
+
+Sitemap: https://www.rootsofcare.ca/sitemap.xml

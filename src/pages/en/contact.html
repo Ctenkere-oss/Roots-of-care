@@ -1,0 +1,224 @@
+<!--META
+title: Contact — Roots of Care, Montréal
+description: Get in touch with Roots of Care in Montréal about locs, natural hair or henna. Send a message, or reach us by email, phone or Instagram.
+-->
+
+<!-- ========================= PAGE HEAD ========================== -->
+<section class="page-head">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="{{HOME}}">Home</a> &nbsp;/&nbsp; Contact</p>
+    <h1>Contact</h1>
+    <p class="lead">
+      Questions about a service, a price, or what your hair needs? Write to
+      us — replies usually come within one business day.
+    </p>
+  </div>
+</section>
+
+<!-- ======================= FORM + DETAILS ======================= -->
+<section class="section">
+  <div class="wrap duo duo--wide-text" style="align-items:start">
+
+    <!-- ================= CONTACT FORM =================
+         The form does nothing until you connect a form service.
+         Easiest options (all have a free tier, no server needed):
+           · Formspree   https://formspree.io
+           · Web3Forms   https://web3forms.com
+           · Basin       https://usebasin.com
+         Create a form there, copy the URL it gives you, and replace
+         [[FORM_ENDPOINT]] in the action attribute below.
+         Until then, the page shows the email fallback instead.
+         ================================================ -->
+    <div class="reveal">
+      <h2>Send a message</h2>
+
+      <form class="form" data-contact-form method="POST" action="[[FORM_ENDPOINT]]"
+            style="margin-top:2rem">
+
+        <div class="form__row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div class="form__row">
+          <div class="field">
+            <label for="phone">Phone <span class="hint">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="service">Service you&rsquo;re interested in</label>
+            <select id="service" name="service">
+              <option value="">Choose one…</option>
+              <option>Loc consultation</option>
+              <option>Loc starting</option>
+              <option>Retwist &amp; maintenance</option>
+              <option>Loc repair</option>
+              <option>Loc styling</option>
+              <option>Braids &amp; twists</option>
+              <option>Henna — hands or feet</option>
+              <option>Bridal henna</option>
+              <option>Event or group henna</option>
+              <option>Hair treatment</option>
+              <option>Something else</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required
+                    placeholder="Tell us about your hair or the design you have in mind…"></textarea>
+        </div>
+
+        <!-- Explicit consent, not pre-ticked (Québec Law 25) -->
+        <div class="field">
+          <label class="consent" for="consent" style="text-transform:none;letter-spacing:normal;font-family:var(--font-body);font-size:.9rem;color:var(--text-muted)">
+            <input type="checkbox" id="consent" name="consent" value="yes" required>
+            <span>
+              I agree that Roots of Care may use the information above to
+              answer my message. It will not be used for anything else or
+              shared with anyone else. See the
+              <a href="{{PRIVACY}}">privacy policy</a>.
+            </span>
+          </label>
+        </div>
+
+        <!-- Simple spam trap — leave this exactly as it is -->
+        <div style="position:absolute;left:-9999px" aria-hidden="true">
+          <label for="website">Leave this field empty</label>
+          <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div>
+          <button class="btn" type="submit">Send message</button>
+        </div>
+
+        <p class="form-note" data-form-note hidden>
+          <strong>The form isn&rsquo;t connected yet.</strong>
+          In the meantime, please write to
+          <span class="fill">[[EMAIL]]</span> or send a DM on Instagram at
+          <a href="{{INSTAGRAM}}" rel="noopener">{{INSTAGRAM_HANDLE}}</a>.
+          <br><br>
+          <span class="small">Site owner: see the comment above this form in
+          <code>contact.html</code> to connect it in about two minutes.</span>
+        </p>
+      </form>
+    </div>
+
+    <!-- ===================== DETAILS ===================== -->
+    <div class="reveal">
+      <div class="card">
+        <h2 style="font-size:clamp(1.3rem,2.4vw,1.7rem)">Details</h2>
+
+        <!-- CONTACT DETAILS — replace every [[...]] below -->
+        <ul class="contact-list" style="margin-top:1.5rem">
+          <li>
+            <span class="label">Email</span>
+            <span class="value-text"><span class="fill">[[EMAIL]]</span></span>
+          </li>
+          <li>
+            <span class="label">Phone</span>
+            <span class="value-text"><span class="fill">[[PHONE]]</span></span>
+          </li>
+          <li>
+            <span class="label">Instagram</span>
+            <span class="value-text">
+              <a href="{{INSTAGRAM}}" rel="noopener">{{INSTAGRAM_HANDLE}}</a>
+            </span>
+          </li>
+          <li>
+            <span class="label">Area served</span>
+            <span class="value-text">
+              <span class="fill">[[NEIGHBOURHOOD / AREA]]</span>, Montréal
+              &amp; surroundings
+            </span>
+          </li>
+          <li>
+            <span class="label">Address</span>
+            <span class="value-text small">
+              The exact address is a private studio and is sent with your
+              booking confirmation.
+            </span>
+          </li>
+        </ul>
+
+        <!-- OPENING HOURS — replace each [[...]] with real hours,
+             or write "Closed" for days you don't work. -->
+        <h3 style="margin-top:2.5rem">Hours</h3>
+        <ul class="hours">
+          <li><span>Monday</span>    <span class="fill">[[HOURS]]</span></li>
+          <li><span>Tuesday</span>   <span class="fill">[[HOURS]]</span></li>
+          <li><span>Wednesday</span> <span class="fill">[[HOURS]]</span></li>
+          <li><span>Thursday</span>  <span class="fill">[[HOURS]]</span></li>
+          <li><span>Friday</span>    <span class="fill">[[HOURS]]</span></li>
+          <li><span>Saturday</span>  <span class="fill">[[HOURS]]</span></li>
+          <li><span>Sunday</span>    <span class="fill">[[HOURS]]</span></li>
+        </ul>
+
+        <p class="small" style="margin-top:1.5rem">
+          Appointments only — please don&rsquo;t drop by without booking.
+        </p>
+
+        <div class="btn-row">
+          <a class="btn" href="{{BOOKING}}">Book an appointment</a>
+        </div>
+      </div>
+
+      <!-- OPTIONAL MAP
+           Only add a map if the address is public. To add one, paste the
+           embed code from Google Maps ("Share" → "Embed a map") here. -->
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================= -->
+<section class="section section--card">
+  <div class="wrap wrap--narrow">
+    <div class="reveal" style="margin-bottom:2.5rem">
+      <p class="eyebrow">Before you write</p>
+      <h2>Quick answers</h2>
+    </div>
+
+    <div class="faq reveal">
+      <details>
+        <summary>How do I book?</summary>
+        <div>
+          Everything goes through the <a href="{{BOOKING}}">booking page</a>,
+          where you can see live availability and pay the $20 deposit.
+          Messages are for questions — they don&rsquo;t hold a time slot.
+        </div>
+      </details>
+      <details>
+        <summary>Can I get a quote by message?</summary>
+        <div>
+          For most services, yes — send a clear photo of your hair and say
+          what you&rsquo;d like. Loc repair and bridal henna are quoted after
+          seeing the work in person, since the price depends on the state of
+          the hair or the size of the design.
+        </div>
+      </details>
+      <details>
+        <summary>Do you take walk-ins?</summary>
+        <div>
+          No. Appointments are one at a time and the schedule is planned
+          around each service, so everything is booked in advance.
+        </div>
+      </details>
+      <details>
+        <summary>How do I cancel or reschedule?</summary>
+        <div>
+          Use the link in your confirmation email, at least 24 hours before
+          your appointment. Inside that window the deposit is not refundable
+          — see the <a href="{{POLICIES}}">booking policies</a>.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>

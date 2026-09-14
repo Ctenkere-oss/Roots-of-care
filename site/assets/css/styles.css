@@ -1059,13 +1059,16 @@ input::placeholder, textarea::placeholder { color: var(--brand-taupe); opacity: 
 .cookie-banner .btn { flex: 1 1 auto; }
 
 /* ========================= ANIMATIONS ========================= */
-.reveal {
+/* Sections fade in as they scroll into view. The hidden starting state is
+   scoped to "html.js", a class added by a one-line script in the <head>, so
+   that if JavaScript is blocked or fails, every section is simply visible. */
+.js .reveal {
   opacity: 0;
   transform: translateY(18px);
   transition: opacity .8s var(--ease), transform .8s var(--ease);
   will-change: opacity, transform;
 }
-.reveal.is-visible { opacity: 1; transform: none; }
+.js .reveal.is-visible { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -1074,7 +1077,7 @@ input::placeholder, textarea::placeholder { color: var(--brand-taupe); opacity: 
     animation-iteration-count: 1 !important;
     transition-duration: .001ms !important;
   }
-  .reveal { opacity: 1; transform: none; }
+  .js .reveal { opacity: 1; transform: none; }
 }
 
 /* ========================= LEGAL PAGES ======================== */

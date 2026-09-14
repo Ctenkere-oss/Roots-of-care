@@ -212,6 +212,10 @@ def head(lang, key, meta, self_path, noindex=False):
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Lato:wght@300;400;700&family=Parisienne&display=swap">
 
 <link rel="stylesheet" href="{a('assets/css/styles.css')}">
+
+<!-- Marks the page as JavaScript-capable. Without it, the scroll fade-ins
+     stay switched off and every section is visible from the start. -->
+<script>document.documentElement.className += " js";</script>
 <script src="{a('assets/js/main.js')}" defer></script>
 {json_ld(lang, key)}
 </head>'''

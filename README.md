@@ -76,8 +76,10 @@ These came across from `rootsofcare.setmore.com` and need no further work:
 - 7 services with confirmed prices and durations: No Retwist Styles,
   Small and Medium Men's Twists, Henna one hand and one arm sleeve,
   Jagua one hand and one arm sleeve
-- The founder section on the About page: Yamile's name, her Haitian and
+- The founder section on the About page: Yamiley's name, her Haitian and
   Cuban roots, and her photograph (`assets/img/yamile-henna.webp`)
+- Instagram and Snapchat links, in the footer of every page, in the mobile
+  menu, on the contact page, on the booking page, and in the structured data
 
 ### Essentials (the site is not ready to launch without these)
 
@@ -86,15 +88,15 @@ These came across from `rootsofcare.setmore.com` and need no further work:
       `$120` or `from $120`, and `3 h` or `90 min`.
 - [ ] **`[[PHONE]]`** — footer of every page, plus contact and booking.
       If you'd rather not publish a number, delete the whole line instead.
-- [ ] **`[[HOURS]]`** — seven days in `contact.html`. Write `Closed` for days
-      you don't work. (Setmore showed a 22:00 closing time but not the full
-      week.)
+- [ ] **`[[HOURS]]`** — seven days in `contact.html`, left blank for now.
+      Write `Closed` for days you don't work. (Setmore showed a 22:00
+      closing time but not the full week.)
 - [ ] **`[[CALENDAR_URL]]`** — `https://rootsofcare.setmore.com` (see §5).
 - [ ] **`[[NEIGHBOURHOOD / AREA]]`** — the part of Montréal you serve
       (`about.html`, `contact.html`).
-- [ ] **Surname on the privacy policy.** The page names Yamile as the
-      person in charge of personal information; a full legal name is
-      stronger there than a first name alone.
+- [ ] **Surname on the privacy policy** (optional). The page names Yamiley
+      as the person in charge of personal information. A full legal name is
+      stronger there, but a first name is workable.
 
 ### Content
 

@@ -993,6 +993,16 @@ input::placeholder, textarea::placeholder { color: var(--brand-taupe); opacity: 
   letter-spacing: .24em;
   margin-bottom: 1.3rem;
 }
+
+/* Anything sitting on the brown ground must take a light colour — the
+   default link brown and the default bold ink are both unreadable there.
+   Declared before .footer-links so that block keeps its softer tone. */
+.site-footer a,
+.section--brown a,
+.site-footer strong,
+.section--brown strong { color: var(--brand-offwhite); }
+.site-footer a:hover,
+.section--brown a:hover { color: var(--brand-offwhite); }
 .footer-logo { width: 210px; margin-bottom: 1.4rem; }
 .footer-links { list-style: none; padding: 0; margin: 0; }
 .footer-links li { margin-bottom: .7rem; }
@@ -1025,6 +1035,16 @@ input::placeholder, textarea::placeholder { color: var(--brand-taupe); opacity: 
   color: var(--on-brown-muted);
 }
 .footer-bottom a { color: var(--on-brown-muted); }
+
+.social-list {
+  list-style: none;
+  margin: 1.2rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
+.social-list li { margin: 0; }
 
 .social {
   display: inline-flex;

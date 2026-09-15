@@ -35,6 +35,8 @@ OUT = os.path.join(ROOT, "site")
 BASE_URL = "https://www.rootsofcare.ca"          # final domain
 INSTAGRAM = "https://www.instagram.com/roots.of.care/"
 INSTAGRAM_HANDLE = "@roots.of.care"
+SNAPCHAT = "https://www.snapchat.com/add/aeilmyy"
+SNAPCHAT_HANDLE = "aeilmyy"
 LAST_UPDATED = "September 14, 2026"
 STUDIO = "Alpha Marketing Studio"
 
@@ -127,6 +129,24 @@ def logo_compact(title="Roots of Care — Beauty Services"):
 ICON_INSTAGRAM = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" '
                   'aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/>'
                   '<circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>')
+
+ICON_SNAPCHAT = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" '
+                 'stroke-linejoin="round" aria-hidden="true" focusable="false">'
+                 '<path d="M6 11.5V8a6 6 0 0 1 12 0v3.5c0 1.7 1.3 2.4 2.7 2.8.6.2.6 1 0 1.2-1.3.4-2.4 1'
+                 '-2.8 2-.2.5-.7.7-1.2.6-.8-.2-1.6 0-2.2.5-1.4 1.1-3 1.1-4.4 0-.6-.5-1.4-.7-2.2-.5-.5.1'
+                 '-1-.1-1.2-.6-.4-1-1.5-1.6-2.8-2-.6-.2-.6-1 0-1.2C4.7 13.9 6 13.2 6 11.5Z"/></svg>')
+
+
+def social_links(light=False):
+    """Instagram and Snapchat, side by side."""
+    return f'''<ul class="social-list">
+          <li><a class="social" href="{INSTAGRAM}" target="_blank" rel="noopener">
+            {ICON_INSTAGRAM}<span>{INSTAGRAM_HANDLE}</span>
+          </a></li>
+          <li><a class="social" href="{SNAPCHAT}" target="_blank" rel="noopener">
+            {ICON_SNAPCHAT}<span>{SNAPCHAT_HANDLE}</span>
+          </a></li>
+        </ul>'''
 
 
 # ---------------------------------------------------------------------------
@@ -264,7 +284,7 @@ def json_ld(lang, key):
   }},
   "areaServed": {{ "@type": "City", "name": "Montréal" }},
   "knowsLanguage": ["en-CA", "fr-CA"],
-  "sameAs": ["{INSTAGRAM}"],
+  "sameAs": ["{INSTAGRAM}", "{SNAPCHAT}"],
   "potentialAction": {{
     "@type": "ReserveAction",
     "target": {{
@@ -339,7 +359,11 @@ def header(lang, key, self_path):
 {mobile_items}      <li><a href="{link('policies')}">{lab['policies']}</a></li>
     </ul>
     <a class="btn" href="{link('booking')}">{ui['book_now']}</a>
-    <p class="mobile-meta"><a href="{INSTAGRAM}" rel="noopener">{INSTAGRAM_HANDLE}</a></p>
+    <p class="mobile-meta">
+      <a href="{INSTAGRAM}" target="_blank" rel="noopener">{INSTAGRAM_HANDLE}</a>
+      &nbsp;·&nbsp;
+      <a href="{SNAPCHAT}" target="_blank" rel="noopener">Snapchat</a>
+    </p>
   </div>
 </nav>
 '''
@@ -364,11 +388,7 @@ def footer(lang, key, self_path):
       <div>
         {logo_full(variant="light", classname="footer-logo")}
         <p>{ui['footer_tagline']}</p>
-        <p style="margin-top:1.2rem">
-          <a class="social" href="{INSTAGRAM}" rel="noopener">
-            {ICON_INSTAGRAM}<span>{INSTAGRAM_HANDLE}</span>
-          </a>
-        </p>
+        {social_links(light=True)}
         <!-- CONTACT DETAILS — the phone number is still to be added -->
         <p class="small" style="color:var(--on-brown-muted);margin-top:.9rem">
           <a href="mailto:rootsofcare.vv@gmail.com">rootsofcare.vv@gmail.com</a><br>
@@ -431,6 +451,8 @@ def expand(body, lang, self_path):
     body = body.replace("{{LOGO_FULL}}", logo_full())
     body = body.replace("{{INSTAGRAM}}", INSTAGRAM)
     body = body.replace("{{INSTAGRAM_HANDLE}}", INSTAGRAM_HANDLE)
+    body = body.replace("{{SNAPCHAT}}", SNAPCHAT)
+    body = body.replace("{{SNAPCHAT_HANDLE}}", SNAPCHAT_HANDLE)
     body = body.replace("{{UPDATED}}", LAST_UPDATED)
     body = body.replace("{{BASE_URL}}", BASE_URL)
     return body

@@ -17,7 +17,7 @@ site/                          ← THIS FOLDER IS THE WEBSITE. Upload it as-is.
 ├── hair.html                  Hair & Locs
 ├── henna.html                 Henna
 ├── services.html              Services, prices & durations (with filters)
-├── booking.html               Booking — holds the calendar embed
+├── booking.html               Booking — service picker + request form
 ├── about.html                 About
 ├── contact.html               Contact form + details + hours
 ├── booking-policies.html      Booking policies ($20 deposit, 24 h notice)

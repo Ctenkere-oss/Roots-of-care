@@ -65,19 +65,34 @@ They show up on the page with a dashed underline, so they are easy to spot.
 
 Open the files in any text editor and use **Find & Replace**.
 
+### Already filled in from the Setmore page
+
+These came across from `rootsofcare.setmore.com` and need no further work:
+
+- Email `rootsofcare.vv@gmail.com`, everywhere it appears
+- The booking policy: non-refundable $20 deposit, e-transfer, 3-hour window,
+  24-hour cancellation notice
+- Booking platform named as Setmore in the privacy policy
+- 7 services with confirmed prices and durations: No Retwist Styles,
+  Small and Medium Men's Twists, Henna one hand and one arm sleeve,
+  Jagua one hand and one arm sleeve
+
 ### Essentials (the site is not ready to launch without these)
 
-- [ ] **`[[PRICE]]` and `[[DURATION]]`** — 24 services in `services.html`.
-      Format: `$120` or `from $120`, and `3 h` or `90 min`.
-- [ ] **`[[EMAIL]]`** — appears on every page (footer) plus contact, booking,
-      privacy.
-- [ ] **`[[PHONE]]`** — same places.
+- [ ] **`[[PRICE]]` and `[[DURATION]]`** — the remaining 20 services in
+      `services.html` (the 7 above already have real numbers). Format:
+      `$120` or `from $120`, and `3 h` or `90 min`.
+- [ ] **`[[PHONE]]`** — footer of every page, plus contact and booking.
+      If you'd rather not publish a number, delete the whole line instead.
 - [ ] **`[[HOURS]]`** — seven days in `contact.html`. Write `Closed` for days
-      you don't work.
-- [ ] **`[[CALENDAR_URL]]`** — your booking platform link (see §5).
+      you don't work. (Setmore showed a 22:00 closing time but not the full
+      week.)
+- [ ] **`[[CALENDAR_URL]]`** — `https://rootsofcare.setmore.com` (see §5).
 - [ ] **`[[NEIGHBOURHOOD / AREA]]`** — the part of Montréal you serve
       (`about.html`, `contact.html`).
 - [ ] **`[[FOUNDER NAME]]`** — `about.html` and `privacy-policy.html`.
+      The Setmore artist profile says **Yamiley**; confirm before publishing
+      it, since a name on a public site is a deliberate choice.
 
 ### Content
 
@@ -93,7 +108,6 @@ Open the files in any text editor and use **Find & Replace**.
 
 ### Privacy policy specifics
 
-- [ ] **`[[PLATFORM NAME]]`** — your booking platform (Fresha, Square…).
 - [ ] **`[[HOSTING PROVIDER]]`** — whoever you host with.
 - [ ] **`[[FORM SERVICE]]`** — the contact form service you connect (§6).
 - [ ] **`[[ANALYTICS TOOL, or "none"]]`** — write `none` if you don't add one.
@@ -138,14 +152,16 @@ platform (Fresha, Square Appointments, Acuity, Setmore, Booksy, Calendly…).
 
 1. Open `site/booking.html` and find the big comment block titled
    `BOOKING CALENDAR AREA`. Full step-by-step instructions are in there.
-2. In your booking platform, look for the section about adding booking to your
-   own website — usually called *Online booking*, *Website widget*,
-   *Place to book*, *Embed*, or *Integrations*.
+2. In Setmore, look for the section about adding booking to your own website
+   — usually under Settings → *Booking Page*, or *Apps & Integrations*. It
+   offers both an embed snippet and a plain link
+   (`https://rootsofcare.setmore.com`).
 3. Either paste the `<iframe>` code it gives you inside
    `<div id="booking-embed">`, **or** just replace `[[CALENDAR_URL]]` with your
    booking link in the two places it appears on that page.
-4. In the platform, set it to collect the **$20 deposit at the time of
-   booking** — that is a platform setting, not a website setting.
+4. Setmore does not collect the deposit, so the booking page explains the
+   e-transfer step instead. If you ever move to a platform that can take the
+   $20 at the time of booking, simplify that section to match.
 
 **Until you do this**, the booking page automatically shows a fallback block
 with a "Book on our platform" button, an Instagram DM link and your email, so

@@ -80,11 +80,11 @@ UI = {
         "menu": "Open menu",
         "book_now": "Book",
         "nav_label": "Main navigation",
-        "footer_tagline": "Loc care, natural hair styling and henna art, in Montréal.",
+        "footer_tagline": "Loc care, natural hair styling, and henna and jagua body art, in Montréal.",
         "footer_nav": "Navigation",
         "footer_info": "Information",
         "footer_policy_title": "Booking",
-        "footer_policy": "A mandatory <strong>$20 deposit</strong> is required in order to book.<br>Cancellations must be made <strong>24&nbsp;hours in advance</strong>.",
+        "footer_policy": "A non-refundable <strong>$20 deposit</strong> is required in order to book, by e-transfer within 3&nbsp;hours.<br>Cancellations must be made <strong>24&nbsp;hours in advance</strong>.",
         "footer_policy_link": "Read the full policies",
         "rights": "All rights reserved.",
         "credit": "Website by",
@@ -228,8 +228,11 @@ def json_ld(lang, key):
         ("Loc starting", "Starting locs on natural hair."),
         ("Loc retwist and maintenance", "Regular root maintenance and retwist."),
         ("Loc repair", "Repair, combining and reconstruction of damaged locs."),
+        ("No retwist styles", "Styling in between retwists, from $25."),
+        ("Men's twists on natural hair", "Small and medium twists, from $65."),
         ("Braids and twists", "Knotless braids, box braids, twists, cornrows."),
-        ("Henna art", "Hands, feet, weddings and events."),
+        ("Henna body art", "Natural henna, hand designs from $15 and arm sleeves from $45."),
+        ("Jagua body art", "Natural jagua gel, hand designs from $20 and arm sleeves from $60."),
         ("Hair treatments", "Deep conditioning and scalp care."),
     ]
     items = ",\n        ".join(
@@ -246,10 +249,11 @@ def json_ld(lang, key):
   "@id": "{BASE_URL}/#business",
   "name": "Roots of Care — Beauty Services",
   "alternateName": "Roots of Care",
-  "description": "Independent studio in Montréal specialising in locs — starting, retwisting, repair and styling — natural hair care and henna art.",
+  "description": "Independent studio in Montréal specialising in locs — starting, retwisting, repair and styling — natural hair care, and henna and jagua body art.",
   "url": "{BASE_URL}/",
   "image": "{BASE_URL}/assets/img/og-roots-of-care.png",
   "logo": "{BASE_URL}/assets/img/logo-roots-of-care.svg",
+  "email": "rootsofcare.vv@gmail.com",
   "priceRange": "$$",
   "currenciesAccepted": "CAD",
   "address": {{
@@ -365,9 +369,9 @@ def footer(lang, key, self_path):
             {ICON_INSTAGRAM}<span>{INSTAGRAM_HANDLE}</span>
           </a>
         </p>
-        <!-- CONTACT DETAILS — replace the two [[...]] blocks below -->
+        <!-- CONTACT DETAILS — the phone number is still to be added -->
         <p class="small" style="color:var(--on-brown-muted);margin-top:.9rem">
-          <span class="fill">[[EMAIL]]</span><br>
+          <a href="mailto:rootsofcare.vv@gmail.com">rootsofcare.vv@gmail.com</a><br>
           <span class="fill">[[PHONE]]</span>
         </p>
       </div>

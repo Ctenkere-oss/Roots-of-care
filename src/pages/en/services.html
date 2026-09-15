@@ -1,6 +1,6 @@
 <!--META
 title: Services &amp; Prices — Roots of Care, Montréal
-description: Full list of Roots of Care services in Montréal: loc starting, retwist and repair, braids and twists, henna, and hair treatments, with durations and prices.
+description: Roots of Care services in Montréal: loc styling and maintenance, men&rsquo;s twists, braids, natural henna and jagua body art, with durations and prices.
 -->
 
 <!-- ========================= PAGE HEAD ========================== -->
@@ -9,7 +9,7 @@ description: Full list of Roots of Care services in Montréal: loc starting, ret
     <p class="breadcrumb"><a href="{{HOME}}">Home</a> &nbsp;/&nbsp; Services</p>
     <h1>Services</h1>
     <p class="lead">
-      Everything that can be booked, hair and henna together. Every service
+      Everything that can be booked, hair and body art together. Every service
       includes a short consultation, so if you are not certain which one to
       pick, book the closest match and we will adjust.
     </p>
@@ -23,21 +23,23 @@ description: Full list of Roots of Care services in Montréal: loc starting, ret
     <!-- FILTERS — the buttons show and hide categories, no page reload -->
     <div class="filters" data-filters role="group" aria-label="Filter services by category">
       <button class="filter-btn" type="button" data-filter="all"    aria-pressed="true">All</button>
-      <button class="filter-btn" type="button" data-filter="locs"   aria-pressed="false">Locs</button>
+      <button class="filter-btn" type="button" data-filter="locs"   aria-pressed="false">Locks</button>
       <button class="filter-btn" type="button" data-filter="braids" aria-pressed="false">Braids &amp; twists</button>
-      <button class="filter-btn" type="button" data-filter="henna"  aria-pressed="false">Henna</button>
+      <button class="filter-btn" type="button" data-filter="henna"  aria-pressed="false">Henna &amp; body art</button>
       <button class="filter-btn" type="button" data-filter="care"   aria-pressed="false">Treatments</button>
     </div>
 
     <!-- =====================================================================
          PRICES AND DURATIONS
-         Replace every [[PRICE]] and [[DURATION]] below with the real values.
-         Suggested format:  price  "$120" or "from $120"   duration  "3 h"
+         The services showing a real price and duration are confirmed.
+         The ones still showing [[PRICE]] / [[DURATION]] need your numbers —
+         replace the text inside the <span class="fill"> tags.
+         Format:  price  "$120" or "from $120"   duration  "3 h" / "90 min"
          To add a service, copy one <div class="service"> block and keep the
          same data-category value so the filter keeps working.
          ===================================================================== -->
       <div class="service-group reveal" data-group>
-        <h2 class="service-group__title">Locs</h2>
+        <h2 class="service-group__title">Locks</h2>
         <div class="service" data-category="locs">
           <div>
             <h3 class="service__name">Loc consultation</h3>
@@ -124,20 +126,44 @@ description: Full list of Roots of Care services in Montréal: loc starting, ret
         </div>
         <div class="service" data-category="locs">
           <div>
-            <h3 class="service__name">Loc styling only</h3>
-            <p class="service__desc">Styling on already-maintained locs, for weddings, graduations, photoshoots and events.</p>
+            <h3 class="service__name">No Retwist Styles</h3>
+            <p class="service__desc">Styling in between retwists. Options include, but are not limited to, two-strand twists, three-strand twists, barrel twists and loc braids. <strong>An additional fee applies for more than 100 locs.</strong></p>
           </div>
           <p class="service__meta">
-            <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
-            <span class="service__price"><span class="fill">[[PRICE]]</span></span>
+            <span class="service__duration">30 min</span>
+            <span class="service__price">$25</span>
           </p>
           <a class="btn btn--ghost btn--sm" href="{{BOOKING}}"
-             aria-label="Book: Loc styling only">Book</a>
+             aria-label="Book: No Retwist Styles">Book</a>
         </div>
       </div>
 
       <div class="service-group reveal" data-group>
         <h2 class="service-group__title">Braids &amp; twists</h2>
+        <div class="service" data-category="braids">
+          <div>
+            <h3 class="service__name">Small Men&rsquo;s Twists on Natural Hair</h3>
+            <p class="service__desc">Small twists on natural hair — 80 twists or more.</p>
+          </div>
+          <p class="service__meta">
+            <span class="service__duration">5 h</span>
+            <span class="service__price">$95</span>
+          </p>
+          <a class="btn btn--ghost btn--sm" href="{{BOOKING}}"
+             aria-label="Book: Small Mens Twists on Natural Hair">Book</a>
+        </div>
+        <div class="service" data-category="braids">
+          <div>
+            <h3 class="service__name">Medium Men&rsquo;s Twists on Natural Hair</h3>
+            <p class="service__desc">Medium-sized twists on natural hair — roughly 50 to 65 twists.</p>
+          </div>
+          <p class="service__meta">
+            <span class="service__duration">3 h 30 min</span>
+            <span class="service__price">$65</span>
+          </p>
+          <a class="btn btn--ghost btn--sm" href="{{BOOKING}}"
+             aria-label="Book: Medium Mens Twists on Natural Hair">Book</a>
+        </div>
         <div class="service" data-category="braids">
           <div>
             <h3 class="service__name">Knotless braids</h3>
@@ -201,30 +227,55 @@ description: Full list of Roots of Care services in Montréal: loc starting, ret
       </div>
 
       <div class="service-group reveal" data-group>
-        <h2 class="service-group__title">Henna</h2>
+        <h2 class="service-group__title">Henna &amp; body art</h2>
+        <p class="small" style="margin:-.6rem 0 1.6rem">Henna and jagua prices may change with the complexity of the design — you will be told before any work starts. <strong>Do not book a jagua service if you have an allergy or sensitivity to berries, eucalyptus or lavender.</strong></p>
         <div class="service" data-category="henna">
           <div>
-            <h3 class="service__name">Henna — small design</h3>
-            <p class="service__desc">A single motif on the back of a hand, a wrist or an ankle. The best introduction if it is your first time.</p>
+            <h3 class="service__name">Henna Paste — One Hand Design</h3>
+            <p class="service__desc">A design on one hand, drawn freehand with natural henna paste.</p>
           </div>
           <p class="service__meta">
-            <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
-            <span class="service__price"><span class="fill">[[PRICE]]</span></span>
+            <span class="service__duration">15 min</span>
+            <span class="service__price">$15</span>
           </p>
           <a class="btn btn--ghost btn--sm" href="{{BOOKING}}"
-             aria-label="Book: Henna — small design">Book</a>
+             aria-label="Book: Henna Paste - One Hand Design">Book</a>
         </div>
         <div class="service" data-category="henna">
           <div>
-            <h3 class="service__name">Henna — hands</h3>
-            <p class="service__desc">Medium to full coverage on both hands, drawn freehand. You choose how intricate.</p>
+            <h3 class="service__name">Henna Paste — One Arm Sleeve</h3>
+            <p class="service__desc">A full sleeve design on one arm, drawn freehand with natural henna paste.</p>
           </div>
           <p class="service__meta">
-            <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
-            <span class="service__price"><span class="fill">[[PRICE]]</span></span>
+            <span class="service__duration">35 min</span>
+            <span class="service__price">$45</span>
           </p>
           <a class="btn btn--ghost btn--sm" href="{{BOOKING}}"
-             aria-label="Book: Henna — hands">Book</a>
+             aria-label="Book: Henna Paste - One Arm Sleeve">Book</a>
+        </div>
+        <div class="service" data-category="henna">
+          <div>
+            <h3 class="service__name">Jagua Temporary Tattoo — One Hand</h3>
+            <p class="service__desc">A one-sided hand design in jagua, which stains a deep blue-black rather than henna&rsquo;s reddish-brown.</p>
+          </div>
+          <p class="service__meta">
+            <span class="service__duration">15 min</span>
+            <span class="service__price">$20</span>
+          </p>
+          <a class="btn btn--ghost btn--sm" href="{{BOOKING}}"
+             aria-label="Book: Jagua Temporary Tattoo - One Hand">Book</a>
+        </div>
+        <div class="service" data-category="henna">
+          <div>
+            <h3 class="service__name">Jagua Gel Temporary Tattoo — One Arm Sleeve</h3>
+            <p class="service__desc">A full sleeve design on one arm in jagua gel, for a blue-black finish.</p>
+          </div>
+          <p class="service__meta">
+            <span class="service__duration">35 min</span>
+            <span class="service__price">$60</span>
+          </p>
+          <a class="btn btn--ghost btn--sm" href="{{BOOKING}}"
+             aria-label="Book: Jagua Gel Temporary Tattoo - One Arm Sleeve">Book</a>
         </div>
         <div class="service" data-category="henna">
           <div>
@@ -236,7 +287,7 @@ description: Full list of Roots of Care services in Montréal: loc starting, ret
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
           <a class="btn btn--ghost btn--sm" href="{{BOOKING}}"
-             aria-label="Book: Henna — feet and ankles">Book</a>
+             aria-label="Book: Henna - feet and ankles">Book</a>
         </div>
         <div class="service" data-category="henna">
           <div>
@@ -341,13 +392,15 @@ description: Full list of Roots of Care services in Montréal: loc starting, ret
     <div class="policy-strip">
       <div>
         <h3>$20 deposit</h3>
-        <p>A mandatory deposit of <strong>$20</strong> is required in order to
-          book, and comes off the price of your service on the day.</p>
+        <p>A mandatory, non-refundable deposit of <strong>$20</strong> is
+          required in order to book, and comes off the price of your service
+          on the day.</p>
       </div>
       <div>
         <h3>24-hour notice</h3>
         <p>Cancellations must be made <strong>24 hours in advance</strong>,
-          otherwise the deposit is not refunded.</p>
+          and the deposit must reach us <strong>within 3 hours</strong> of
+          booking or the appointment is released.</p>
       </div>
     </div>
     <p class="center" style="margin-top:1.8rem">

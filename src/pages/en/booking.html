@@ -1,6 +1,6 @@
 <!--META
 title: Book an Appointment — Roots of Care, Montréal
-description: Book your loc, braid, natural hair or henna appointment with Roots of Care in Montréal. A $20 deposit is required; cancellations 24 hours in advance.
+description: Book your loc, twist, braid, henna or jagua appointment with Roots of Care in Montréal. A non-refundable $20 e-transfer deposit confirms your spot.
 -->
 
 <!-- ========================= PAGE HEAD ========================== -->
@@ -9,8 +9,9 @@ description: Book your loc, braid, natural hair or henna appointment with Roots 
     <p class="breadcrumb"><a href="{{HOME}}">Home</a> &nbsp;/&nbsp; Book</p>
     <h1>Book an appointment</h1>
     <p class="lead">
-      Choose your service and a time that works for you. Booking takes about
-      two minutes, and you will get a confirmation straight away.
+      Choose your service and a time that works for you, then send the $20
+      deposit by e-transfer to confirm it. The whole thing takes about five
+      minutes.
     </p>
   </div>
 </section>
@@ -18,21 +19,29 @@ description: Book your loc, braid, natural hair or henna appointment with Roots 
 <!-- ===================== POLICY REMINDER ======================== -->
 <section class="section section--tight">
   <div class="wrap">
-    <div class="policy-strip reveal">
+    <div class="policy-strip reveal" style="grid-template-columns:1fr">
       <div>
-        <h3>$20 deposit</h3>
+        <h3>1 &middot; Book your slot</h3>
         <p>
-          A mandatory deposit of <strong>$20</strong> is required in order to
-          book. It is not an extra charge — it comes off the price of your
-          service on the day.
+          Pick your service and time below. A <strong>non-refundable $20
+          deposit</strong> is required to hold it — it is not an extra
+          charge, it comes off the price of your service on the day.
         </p>
       </div>
       <div>
-        <h3>24-hour notice</h3>
+        <h3>2 &middot; Send the deposit within 3 hours</h3>
         <p>
-          Cancellations must be made <strong>24 hours in advance</strong>.
-          Cancelling later than that, or not showing up, means the deposit is
-          not refunded. <a href="{{POLICIES}}">Full policies</a>.
+          By e-transfer to
+          <strong><a href="mailto:rootsofcare.vv@gmail.com">rootsofcare.vv@gmail.com</a></strong>.
+          If it hasn&rsquo;t arrived within <strong>3 hours</strong> of
+          booking, the appointment is cancelled and the time is released.
+        </p>
+      </div>
+      <div>
+        <h3>3 &middot; Need to change it?</h3>
+        <p>
+          Cancellations must be made <strong>at least 24 hours in
+          advance</strong>. <a href="{{POLICIES}}">Full policies</a>.
         </p>
       </div>
     </div>
@@ -44,27 +53,24 @@ description: Book your loc, braid, natural hair or henna appointment with Roots 
      ---------------------------------------------------------------------
      HOW TO CONNECT YOUR CALENDAR (one-time setup, about 5 minutes)
 
-     1. Open your booking platform (Fresha, Square Appointments, Acuity,
-        Setmore, Booksy, Calendly...) and find the section for putting
-        booking on your own website. It is usually called something like
-        "Online booking", "Website widget", "Place to book", "Embed" or
-        "Integrations".
+     Your existing booking page is rootsofcare.setmore.com
 
-     2. Copy the code it gives you. It will either be a full <iframe ...>
-        block, or a plain link ending in something like
-        https://www.fresha.com/a/your-business-name
+     1. In Setmore, go to Settings → "Booking Page" (sometimes listed under
+        Apps & Integrations). Look for the option to add booking to your own
+        website — Setmore offers both an embed snippet and a plain link.
 
-     3a. IF YOU HAVE A FULL <iframe> BLOCK:
+     2a. IF YOU GET A FULL <iframe> BLOCK:
          Delete the commented-out <iframe> below and paste yours in its
          place, inside <div id="booking-embed">. Keep the div itself.
 
-     3b. IF YOU ONLY HAVE A LINK:
+     2b. IF YOU ONLY HAVE THE LINK:
          Uncomment the <iframe> below and replace [[CALENDAR_URL]] with
-         your link. Also replace [[CALENDAR_URL]] in the fallback block
-         further down, so the button works either way.
+         https://rootsofcare.setmore.com  — and do the same in the fallback
+         block further down so the button works either way.
 
-     4. Make sure the platform is set to collect the $20 deposit at the
-        time of booking — that is configured in the platform, not here.
+     NOTE: Setmore does not collect the deposit, so the three steps above
+     stay on this page. If you ever switch to a platform that can take the
+     $20 at the time of booking, simplify this page to match.
 
      IMPORTANT: never apply a CSS transform to #booking-embed or to any of
      its parent elements; it breaks embedded calendars in some browsers.
@@ -95,8 +101,9 @@ description: Book your loc, braid, natural hair or henna appointment with Roots 
       <p class="eyebrow" style="justify-content:center;display:inline-flex">Booking</p>
       <h3>Reserve your spot</h3>
       <p class="measure" style="margin-inline:auto">
-        Booking is handled on our scheduling platform, where you can see live
-        availability, pick your service and pay the $20 deposit.
+        Booking is handled on our scheduling page, where you can see live
+        availability and pick your service. Once you&rsquo;ve booked, send
+        the $20 deposit by e-transfer within 3 hours to confirm it.
       </p>
 
       <div class="btn-row" style="justify-content:center">
@@ -109,8 +116,9 @@ description: Book your loc, braid, natural hair or henna appointment with Roots 
       </div>
 
       <p class="small" style="margin-top:2rem">
-        Prefer email? Write to <span class="fill">[[EMAIL]]</span>
-        &nbsp;·&nbsp; Or call <span class="fill">[[PHONE]]</span>
+        Deposits and questions:
+        <a href="mailto:rootsofcare.vv@gmail.com">rootsofcare.vv@gmail.com</a>
+        &nbsp;·&nbsp; <span class="fill">[[PHONE]]</span>
       </p>
     </div>
 
@@ -125,24 +133,26 @@ description: Book your loc, braid, natural hair or henna appointment with Roots 
 
     <ol class="steps" style="margin-top:2.5rem">
       <li class="step">
-        <h3>Confirmation</h3>
+        <h3>Send your deposit</h3>
         <p>
-          You get an email or text confirming your service, date and time,
-          along with the studio address.
+          Straight away, e-transfer <strong>$20</strong> to
+          <a href="mailto:rootsofcare.vv@gmail.com">rootsofcare.vv@gmail.com</a>.
+          You have three hours — after that the slot is released. Put your
+          name in the message so it can be matched to your booking.
         </p>
       </li>
       <li class="step">
-        <h3>Reminder</h3>
+        <h3>Confirmation</h3>
         <p>
-          A reminder arrives before your appointment — that is also your last
-          easy moment to reschedule free of charge.
+          Once the deposit is received you get a confirmation with your
+          service, date and time, along with the studio address.
         </p>
       </li>
       <li class="step">
         <h3>Prepare</h3>
         <p>
           Come with clean, product-free hair unless a wash is included. For
-          henna, arrive with clean, oil-free skin.
+          henna or jagua, arrive with clean, oil-free skin.
           <a href="{{HAIR}}">Full preparation guide</a>.
         </p>
       </li>
@@ -150,7 +160,7 @@ description: Book your loc, braid, natural hair or henna appointment with Roots 
         <h3>Your appointment</h3>
         <p>
           Arrive a few minutes early. The remaining balance is settled at the
-          end of the appointment, with your $20 deposit already deducted.
+          end, with your $20 deposit already deducted.
         </p>
       </li>
     </ol>

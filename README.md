@@ -31,7 +31,8 @@ site/                          ← THIS FOLDER IS THE WEBSITE. Upload it as-is.
     ├── js/main.js             ALL the scripts, one file
     └── img/                   Logo, icons, share image, image placeholders
 
-src/          Page content only (used by the optional build script — see §10)
+netlify.toml  Tells Netlify the website is in site/ (see §2)
+src/          Page content, and services.py — the price list (see §10)
 tools/        The optional build script
 ```
 
@@ -43,7 +44,7 @@ The site is a folder of files, so almost any host works. Pick one:
 
 | Where | How | Notes |
 |---|---|---|
-| **Netlify** (easiest) | netlify.com → drag the `site` folder onto the upload box | Free tier, free SSL, custom domain in a few clicks |
+| **Netlify** (easiest) | netlify.com → drag the **`site` folder** onto the upload box | Free tier, free SSL, custom domain in a few clicks |
 | **Cloudflare Pages** | Connect this Git repo, or upload the folder | Free, very fast, free SSL |
 | **Vercel** | Import the repo, set the output directory to `site` | Free tier, free SSL |
 | **Any cPanel / FTP host** | Upload the **contents** of `site/` into `public_html` | Enable SSL in the host panel |

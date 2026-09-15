@@ -1,0 +1,15 @@
+# Netlify rewrite rules — see https://docs.netlify.com/routing/redirects/
+#
+# Serve the home page at the site root.
+/                     /index.html          200
+
+# Friendly addresses without the .html, in case anyone types or shares one.
+/book                 /booking.html        301
+/services             /services.html       301
+/henna                /henna.html          301
+/hair                 /hair.html           301
+/about                /about.html          301
+/contact              /contact.html        301
+/policies             /booking-policies.html  301
+/privacy              /privacy-policy.html    301
+/terms                /terms.html          301

@@ -599,6 +599,32 @@ def build_sitemap():
           + "\n".join(entries) + "\n</urlset>\n")
 
 
+def build_redirects():
+    """Netlify rewrite rules, read from the root of the published folder.
+
+    Serves the home page at the bare domain. Almost every host does this on
+    its own, but a deploy that has lost its directory index returns "page not
+    found" at / while /index.html still works — this covers that case. It is
+    a rewrite (200), not a redirect, so the address bar keeps showing the
+    bare domain. Harmless on hosts that ignore the file."""
+    write("_redirects", """# Netlify rewrite rules — see https://docs.netlify.com/routing/redirects/
+#
+# Serve the home page at the site root.
+/                     /index.html          200
+
+# Friendly addresses without the .html, in case anyone types or shares one.
+/book                 /booking.html        301
+/services             /services.html       301
+/henna                /henna.html          301
+/hair                 /hair.html           301
+/about                /about.html          301
+/contact              /contact.html        301
+/policies             /booking-policies.html  301
+/privacy              /privacy-policy.html    301
+/terms                /terms.html          301
+""")
+
+
 def build_robots():
     write("robots.txt", f"""# robots.txt — Roots of Care
 User-agent: *
@@ -653,7 +679,8 @@ def main():
     build_404()
     build_sitemap()
     build_robots()
-    print(f"OK — {count} pages written to site/ (plus 404, sitemap, robots)")
+    build_redirects()
+    print(f"OK — {count} pages written to site/ (plus 404, sitemap, robots, _redirects)")
 
 
 if __name__ == "__main__":

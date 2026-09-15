@@ -26,6 +26,7 @@ site/                          ← THIS FOLDER IS THE WEBSITE. Upload it as-is.
 ├── 404.html                   Error page, in brand colours
 ├── robots.txt                 Search engine instructions
 ├── sitemap.xml                Page list for Google
+├── _redirects                 Netlify: serves the home page at the bare domain
 └── assets/
     ├── css/styles.css         ALL the styling, one file
     ├── js/main.js             ALL the scripts, one file
@@ -64,11 +65,14 @@ Both symptoms have the same cause: the browser is asking for a file that
 isn't where it expects.
 
 1. **Open `https://yoursite.netlify.app/index.html` directly.**
-   - It loads → the files are there, but not at the top level. Redeploy
-     using the **contents** of the folder rather than the folder itself. On
-     Netlify, *Deploys → the latest deploy → Browse the deploy* lists exactly
-     what was published; `index.html` should be in that first list, not
-     inside another folder.
+   - **It loads, but the bare domain doesn't** → the files are in the right
+     place; the host just isn't treating `index.html` as the directory
+     index. The `_redirects` file in `site/` fixes this — make sure it was
+     uploaded (it has no file extension, so it is easy to lose), and
+     redeploy.
+   - It loads and so does the bare domain → nothing is wrong; you were
+     looking at a URL that genuinely has no page, and the 404 is doing its
+     job.
    - It also fails → nothing was published where Netlify is looking. If you
      connected this Git repository, that is what `netlify.toml` fixes: it
      tells Netlify the site is in `site/`. Redeploy after pushing it.

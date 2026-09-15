@@ -51,11 +51,35 @@ The site is a folder of files, so almost any host works. Pick one:
 | **10Web / TenWeb** | Publish to a temporary URL first (Netlify is fine), then use their *import from URL* feature | Their importer reads a live site, not a ZIP |
 | **Wix** | Not recommended | Wix cannot import an HTML site. You would have to rebuild the design by hand in their editor. |
 
-Whatever you choose, upload the **contents** of `site/` to the web root, so the
-home page ends up at `https://yourdomain.com/index.html`.
+Whatever you choose, `index.html` has to land at the **top level** of the
+published site, so the home page is at `https://yourdomain.com/` — not at
+`https://yourdomain.com/site/` or `.../roots-of-care-website/`.
 
 You handle hosting, SSL and email — nothing in these files depends on a
 specific host.
+
+### If the site shows "page not found", or looks like plain unstyled text
+
+Both symptoms have the same cause: the browser is asking for a file that
+isn't where it expects.
+
+1. **Open `https://yoursite.netlify.app/index.html` directly.**
+   - It loads → the files are there, but not at the top level. Redeploy
+     using the **contents** of the folder rather than the folder itself. On
+     Netlify, *Deploys → the latest deploy → Browse the deploy* lists exactly
+     what was published; `index.html` should be in that first list, not
+     inside another folder.
+   - It also fails → nothing was published where Netlify is looking. If you
+     connected this Git repository, that is what `netlify.toml` fixes: it
+     tells Netlify the site is in `site/`. Redeploy after pushing it.
+
+2. **Unstyled text with blue links** means the page loaded but
+   `assets/css/styles.css` did not. Check that the whole `assets` folder was
+   uploaded alongside the HTML files — easy to miss when uploading file by
+   file.
+
+A tip while testing: hard-refresh, or use a private window. A normal tab can
+keep showing an old cached version for a while after a redeploy.
 
 ---
 

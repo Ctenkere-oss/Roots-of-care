@@ -182,21 +182,19 @@
 
     <!-- FILTERS — the buttons show and hide categories, no page reload -->
     <div class="filters" data-filters role="group" aria-label="Filter services by category">
-      <button class="filter-btn" type="button" data-filter="all"    aria-pressed="true">All</button>
-      <button class="filter-btn" type="button" data-filter="locs"   aria-pressed="false">Locks</button>
+      <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter-btn" type="button" data-filter="locs" aria-pressed="false">Locks</button>
       <button class="filter-btn" type="button" data-filter="braids" aria-pressed="false">Braids &amp; twists</button>
-      <button class="filter-btn" type="button" data-filter="henna"  aria-pressed="false">Henna &amp; body art</button>
-      <button class="filter-btn" type="button" data-filter="care"   aria-pressed="false">Treatments</button>
+      <button class="filter-btn" type="button" data-filter="henna" aria-pressed="false">Henna &amp; body art</button>
+      <button class="filter-btn" type="button" data-filter="care" aria-pressed="false">Treatments</button>
     </div>
 
     <!-- =====================================================================
-         PRICES AND DURATIONS
-         The services showing a real price and duration are confirmed.
-         The ones still showing [[PRICE]] / [[DURATION]] need your numbers —
-         replace the text inside the <span class="fill"> tags.
-         Format:  price  "$120" or "from $120"   duration  "3 h" / "90 min"
-         To add a service, copy one <div class="service"> block and keep the
-         same data-category value so the filter keeps working.
+         THE SERVICE LIST
+         Generated from src/services.py — the same source as the booking page
+         picker and the form drop-downs. To change a price or a duration, or
+         to add a service, edit that file and run: python3 tools/build.py
+         The entries still showing [[PRICE]] / [[DURATION]] need your numbers.
          ===================================================================== -->
       <div class="service-group reveal" data-group>
         <h2 class="service-group__title">Locks</h2>
@@ -209,8 +207,8 @@
             <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Loc consultation">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Loc%20consultation#request"
+             data-service="Loc consultation" aria-label="Book: Loc consultation">Book</a>
         </div>
         <div class="service" data-category="locs">
           <div>
@@ -221,8 +219,8 @@
             <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Loc starting">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Loc%20starting#request"
+             data-service="Loc starting" aria-label="Book: Loc starting">Book</a>
         </div>
         <div class="service" data-category="locs">
           <div>
@@ -233,8 +231,8 @@
             <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Retwist and maintenance">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Retwist%20%26%20maintenance#request"
+             data-service="Retwist &amp; maintenance" aria-label="Book: Retwist &amp; maintenance">Book</a>
         </div>
         <div class="service" data-category="locs">
           <div>
@@ -245,8 +243,8 @@
             <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Retwist, wash and deep condition">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Retwist%2C%20wash%20%26%20deep%20condition#request"
+             data-service="Retwist, wash &amp; deep condition" aria-label="Book: Retwist, wash &amp; deep condition">Book</a>
         </div>
         <div class="service" data-category="locs">
           <div>
@@ -257,8 +255,8 @@
             <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Retwist + style">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Retwist%20%2B%20style#request"
+             data-service="Retwist + style" aria-label="Book: Retwist + style">Book</a>
         </div>
         <div class="service" data-category="locs">
           <div>
@@ -269,8 +267,8 @@
             <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Interlocking maintenance">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Interlocking%20maintenance#request"
+             data-service="Interlocking maintenance" aria-label="Book: Interlocking maintenance">Book</a>
         </div>
         <div class="service" data-category="locs">
           <div>
@@ -281,8 +279,8 @@
             <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Loc repair">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Loc%20repair#request"
+             data-service="Loc repair" aria-label="Book: Loc repair">Book</a>
         </div>
         <div class="service" data-category="locs">
           <div>
@@ -293,8 +291,8 @@
             <span class="service__duration">30 min</span>
             <span class="service__price">$25</span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: No Retwist Styles">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=No%20Retwist%20Styles#request"
+             data-service="No Retwist Styles" aria-label="Book: No Retwist Styles">Book</a>
         </div>
       </div>
 
@@ -309,8 +307,8 @@
             <span class="service__duration">5 h</span>
             <span class="service__price">$95</span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Small Mens Twists on Natural Hair">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Small%20Men%E2%80%99s%20Twists%20on%20Natural%20Hair#request"
+             data-service="Small Men&rsquo;s Twists on Natural Hair" aria-label="Book: Small Men&rsquo;s Twists on Natural Hair">Book</a>
         </div>
         <div class="service" data-category="braids">
           <div>
@@ -321,8 +319,8 @@
             <span class="service__duration">3 h 30 min</span>
             <span class="service__price">$65</span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Medium Mens Twists on Natural Hair">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Medium%20Men%E2%80%99s%20Twists%20on%20Natural%20Hair#request"
+             data-service="Medium Men&rsquo;s Twists on Natural Hair" aria-label="Book: Medium Men&rsquo;s Twists on Natural Hair">Book</a>
         </div>
         <div class="service" data-category="braids">
           <div>
@@ -333,8 +331,8 @@
             <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Knotless braids">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Knotless%20braids#request"
+             data-service="Knotless braids" aria-label="Book: Knotless braids">Book</a>
         </div>
         <div class="service" data-category="braids">
           <div>
@@ -345,8 +343,8 @@
             <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Box braids">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Box%20braids#request"
+             data-service="Box braids" aria-label="Book: Box braids">Book</a>
         </div>
         <div class="service" data-category="braids">
           <div>
@@ -357,8 +355,8 @@
             <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Two-strand twists">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Two-strand%20twists#request"
+             data-service="Two-strand twists" aria-label="Book: Two-strand twists">Book</a>
         </div>
         <div class="service" data-category="braids">
           <div>
@@ -369,8 +367,8 @@
             <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Cornrows">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Cornrows#request"
+             data-service="Cornrows" aria-label="Book: Cornrows">Book</a>
         </div>
         <div class="service" data-category="braids">
           <div>
@@ -381,8 +379,8 @@
             <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Childrens braids">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Children%E2%80%99s%20braids#request"
+             data-service="Children&rsquo;s braids" aria-label="Book: Children&rsquo;s braids">Book</a>
         </div>
       </div>
 
@@ -398,8 +396,8 @@
             <span class="service__duration">15 min</span>
             <span class="service__price">$15</span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Henna Paste - One Hand Design">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Henna%20Paste%20%E2%80%94%20One%20Hand%20Design#request"
+             data-service="Henna Paste — One Hand Design" aria-label="Book: Henna Paste — One Hand Design">Book</a>
         </div>
         <div class="service" data-category="henna">
           <div>
@@ -410,8 +408,8 @@
             <span class="service__duration">35 min</span>
             <span class="service__price">$45</span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Henna Paste - One Arm Sleeve">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Henna%20Paste%20%E2%80%94%20One%20Arm%20Sleeve#request"
+             data-service="Henna Paste — One Arm Sleeve" aria-label="Book: Henna Paste — One Arm Sleeve">Book</a>
         </div>
         <div class="service" data-category="henna">
           <div>
@@ -422,8 +420,8 @@
             <span class="service__duration">15 min</span>
             <span class="service__price">$20</span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Jagua Temporary Tattoo - One Hand">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Jagua%20Temporary%20Tattoo%20%E2%80%94%20One%20Hand#request"
+             data-service="Jagua Temporary Tattoo — One Hand" aria-label="Book: Jagua Temporary Tattoo — One Hand">Book</a>
         </div>
         <div class="service" data-category="henna">
           <div>
@@ -434,8 +432,8 @@
             <span class="service__duration">35 min</span>
             <span class="service__price">$60</span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Jagua Gel Temporary Tattoo - One Arm Sleeve">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Jagua%20Gel%20Temporary%20Tattoo%20%E2%80%94%20One%20Arm%20Sleeve#request"
+             data-service="Jagua Gel Temporary Tattoo — One Arm Sleeve" aria-label="Book: Jagua Gel Temporary Tattoo — One Arm Sleeve">Book</a>
         </div>
         <div class="service" data-category="henna">
           <div>
@@ -446,8 +444,8 @@
             <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Henna - feet and ankles">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Henna%20%E2%80%94%20feet%20%26%20ankles#request"
+             data-service="Henna — feet &amp; ankles" aria-label="Book: Henna — feet &amp; ankles">Book</a>
         </div>
         <div class="service" data-category="henna">
           <div>
@@ -458,8 +456,8 @@
             <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Bridal henna">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Bridal%20henna#request"
+             data-service="Bridal henna" aria-label="Book: Bridal henna">Book</a>
         </div>
         <div class="service" data-category="henna">
           <div>
@@ -470,8 +468,8 @@
             <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Events and groups">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Events%20%26%20groups#request"
+             data-service="Events &amp; groups" aria-label="Book: Events &amp; groups">Book</a>
         </div>
         <div class="service" data-category="henna">
           <div>
@@ -482,8 +480,8 @@
             <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Hair henna treatment">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Hair%20henna%20treatment#request"
+             data-service="Hair henna treatment" aria-label="Book: Hair henna treatment">Book</a>
         </div>
       </div>
 
@@ -498,8 +496,8 @@
             <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Clarifying detox wash">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Clarifying%20detox%20wash#request"
+             data-service="Clarifying detox wash" aria-label="Book: Clarifying detox wash">Book</a>
         </div>
         <div class="service" data-category="care">
           <div>
@@ -510,8 +508,8 @@
             <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Deep conditioning treatment">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Deep%20conditioning%20treatment#request"
+             data-service="Deep conditioning treatment" aria-label="Book: Deep conditioning treatment">Book</a>
         </div>
         <div class="service" data-category="care">
           <div>
@@ -522,8 +520,8 @@
             <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Scalp treatment">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Scalp%20treatment#request"
+             data-service="Scalp treatment" aria-label="Book: Scalp treatment">Book</a>
         </div>
         <div class="service" data-category="care">
           <div>
@@ -534,8 +532,8 @@
             <span class="service__duration"><span class="fill">[[DURATION]]</span></span>
             <span class="service__price"><span class="fill">[[PRICE]]</span></span>
           </p>
-          <a class="btn btn--ghost btn--sm" href="booking.html"
-             aria-label="Book: Wash and dry">Book</a>
+          <a class="btn btn--ghost btn--sm" href="booking.html?service=Wash%20%26%20dry#request"
+             data-service="Wash &amp; dry" aria-label="Book: Wash &amp; dry">Book</a>
         </div>
       </div>
 

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Book an Appointment — Roots of Care, Montréal</title>
-<meta name="description" content="Book your loc, twist, braid, henna or jagua appointment with Roots of Care in Montréal. A non-refundable $20 e-transfer deposit confirms your spot.">
+<meta name="description" content="Choose your service and send a booking request to Roots of Care in Montréal. A non-refundable $20 e-transfer deposit confirms your appointment.">
 <link rel="canonical" href="https://www.rootsofcare.ca/booking.html">
 <link rel="alternate" hreflang="en-CA" href="https://www.rootsofcare.ca/booking.html">
 <link rel="alternate" hreflang="x-default" href="https://www.rootsofcare.ca/booking.html">
@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Roots of Care — Beauty Services">
 <meta property="og:locale" content="en_CA">
 <meta property="og:title" content="Book an Appointment — Roots of Care, Montréal">
-<meta property="og:description" content="Book your loc, twist, braid, henna or jagua appointment with Roots of Care in Montréal. A non-refundable $20 e-transfer deposit confirms your spot.">
+<meta property="og:description" content="Choose your service and send a booking request to Roots of Care in Montréal. A non-refundable $20 e-transfer deposit confirms your appointment.">
 <meta property="og:url" content="https://www.rootsofcare.ca/booking.html">
 <meta property="og:image" content="https://www.rootsofcare.ca/assets/img/og-roots-of-care.png">
 <meta property="og:image:width" content="1200">
@@ -22,7 +22,7 @@
 <meta property="og:image:alt" content="Roots of Care — Beauty Services, Montréal">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Book an Appointment — Roots of Care, Montréal">
-<meta name="twitter:description" content="Book your loc, twist, braid, henna or jagua appointment with Roots of Care in Montréal. A non-refundable $20 e-transfer deposit confirms your spot.">
+<meta name="twitter:description" content="Choose your service and send a booking request to Roots of Care in Montréal. A non-refundable $20 e-transfer deposit confirms your appointment.">
 <meta name="twitter:image" content="https://www.rootsofcare.ca/assets/img/og-roots-of-care.png">
 <meta name="theme-color" content="#E9E5DC">
 
@@ -169,178 +169,454 @@
     <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Book</p>
     <h1>Book an appointment</h1>
     <p class="lead">
-      Choose your service and a time that works for you, then send the $20
-      deposit by e-transfer to confirm it. The whole thing takes about five
-      minutes.
+      Pick the service you want below, tell us a little about what you&rsquo;re
+      after, and we&rsquo;ll come back to you with a time.
     </p>
+    <div class="btn-row"><a class="btn" href="#services">Choose your service</a></div>
   </div>
 </section>
 
-<!-- ===================== POLICY REMINDER ======================== -->
+<!-- ======================= HOW IT WORKS ========================= -->
 <section class="section section--tight">
   <div class="wrap">
     <div class="policy-strip reveal" style="grid-template-columns:1fr">
       <div>
-        <h3>1 &middot; Book your slot</h3>
+        <h3>1 &middot; Send your request</h3>
         <p>
-          Pick your service and time below. A <strong>non-refundable $20
-          deposit</strong> is required to hold it — it is not an extra
-          charge, it comes off the price of your service on the day.
+          Choose a service and fill in the short form. Nothing is charged at
+          this stage — it is a request, not a confirmed appointment.
         </p>
       </div>
       <div>
-        <h3>2 &middot; Send the deposit within 3 hours</h3>
+        <h3>2 &middot; We confirm a time</h3>
+        <p>
+          You&rsquo;ll get a reply with a time that works, usually within one
+          business day.
+        </p>
+      </div>
+      <div>
+        <h3>3 &middot; Send the $20 deposit</h3>
         <p>
           By e-transfer to
-          <strong><a href="mailto:rootsofcare.vv@gmail.com">rootsofcare.vv@gmail.com</a></strong>.
-          If it hasn&rsquo;t arrived within <strong>3 hours</strong> of
-          booking, the appointment is cancelled and the time is released.
-        </p>
-      </div>
-      <div>
-        <h3>3 &middot; Need to change it?</h3>
-        <p>
-          Cancellations must be made <strong>at least 24 hours in
-          advance</strong>. <a href="booking-policies.html">Full policies</a>.
+          <strong><a href="mailto:rootsofcare.vv@gmail.com">rootsofcare.vv@gmail.com</a></strong>
+          within <strong>3 hours</strong> of that confirmation, or the time is
+          released. It is non-refundable and comes off the price on the day.
+          <a href="booking-policies.html">Full policies</a>.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- =====================================================================
-     BOOKING CALENDAR AREA
-     ---------------------------------------------------------------------
-     HOW TO CONNECT YOUR CALENDAR (one-time setup, about 5 minutes)
-
-     Your existing booking page is rootsofcare.setmore.com
-
-     1. In Setmore, go to Settings → "Booking Page" (sometimes listed under
-        Apps & Integrations). Look for the option to add booking to your own
-        website — Setmore offers both an embed snippet and a plain link.
-
-     2a. IF YOU GET A FULL <iframe> BLOCK:
-         Delete the commented-out <iframe> below and paste yours in its
-         place, inside <div id="booking-embed">. Keep the div itself.
-
-     2b. IF YOU ONLY HAVE THE LINK:
-         Uncomment the <iframe> below and replace [[CALENDAR_URL]] with
-         https://rootsofcare.setmore.com  — and do the same in the fallback
-         block further down so the button works either way.
-
-     NOTE: Setmore does not collect the deposit, so the three steps above
-     stay on this page. If you ever switch to a platform that can take the
-     $20 at the time of booking, simplify this page to match.
-
-     IMPORTANT: never apply a CSS transform to #booking-embed or to any of
-     its parent elements; it breaks embedded calendars in some browsers.
-     ===================================================================== -->
-<section class="section" style="padding-top:clamp(1.5rem,3vw,2.5rem)">
+<!-- =================== CHOOSE YOUR SERVICE ====================== -->
+<!-- The list below is generated from src/services.py, the same source as the
+     services page and the drop-down in the form. Change a price there once
+     and all three update. Each Book button fills in the form further down. -->
+<section class="section" id="services">
   <div class="wrap">
-
-    <div id="booking-embed" class="booking-embed" hidden>
-      <!-- ▼▼▼ PASTE YOUR BOOKING PLATFORM EMBED CODE HERE ▼▼▼ -->
-      <!--
-      <iframe
-        src="[[CALENDAR_URL]]"
-        title="Online booking — Roots of Care"
-        width="100%"
-        height="800"
-        frameborder="0"
-        loading="lazy"
-        allow="payment"
-        style="border:0; max-width:100%;">
-      </iframe>
-      -->
-      <!-- ▲▲▲ PASTE YOUR BOOKING PLATFORM EMBED CODE HERE ▲▲▲ -->
-    </div>
-
-    <!-- FALLBACK — shown whenever the calendar above is not connected yet
-         or fails to load. Replace [[CALENDAR_URL]] with your booking link. -->
-    <div id="booking-fallback" class="booking-fallback reveal">
-      <p class="eyebrow" style="justify-content:center;display:inline-flex">Booking</p>
-      <h3>Reserve your spot</h3>
-      <p class="measure" style="margin-inline:auto">
-        Booking is handled on our scheduling page, where you can see live
-        availability and pick your service. Once you&rsquo;ve booked, send
-        the $20 deposit by e-transfer within 3 hours to confirm it.
-      </p>
-
-      <div class="btn-row" style="justify-content:center">
-        <a class="btn" href="[[CALENDAR_URL]]" target="_blank" rel="noopener">
-          Book on our platform
-        </a>
-        <a class="btn btn--ghost" href="https://www.instagram.com/roots.of.care/" target="_blank" rel="noopener">
-          Instagram DM
-        </a>
-        <a class="btn btn--ghost" href="https://www.snapchat.com/add/aeilmyy" target="_blank" rel="noopener">
-          Snapchat
-        </a>
-      </div>
-
-      <p class="small" style="margin-top:2rem">
-        Deposits and questions:
-        <a href="mailto:rootsofcare.vv@gmail.com">rootsofcare.vv@gmail.com</a>
-        &nbsp;·&nbsp; <span class="fill">[[PHONE]]</span>
+    <div class="center reveal" style="margin-bottom:clamp(2rem,4vw,3rem)">
+      <p class="eyebrow">Step one</p>
+      <h2>Choose your service</h2>
+      <p class="lead measure">
+        Press <em>Book</em> next to what you want and it will fill itself into
+        the form below. Not sure? Pick the closest match — we&rsquo;ll adjust.
       </p>
     </div>
 
+        <div class="picker-group reveal" data-group>
+          <h3 class="service-group__title">Locks</h3>
+          <ul class="picker">
+          <li data-category="locs">
+            <span class="picker__name">Loc consultation</span>
+            <span class="picker__meta"><span class="fill">[[PRICE]]</span></span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Loc consultation" aria-label="Book: Loc consultation">Book</a>
+          </li>
+          <li data-category="locs">
+            <span class="picker__name">Loc starting</span>
+            <span class="picker__meta"><span class="fill">[[PRICE]]</span></span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Loc starting" aria-label="Book: Loc starting">Book</a>
+          </li>
+          <li data-category="locs">
+            <span class="picker__name">Retwist &amp; maintenance</span>
+            <span class="picker__meta"><span class="fill">[[PRICE]]</span></span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Retwist &amp; maintenance" aria-label="Book: Retwist &amp; maintenance">Book</a>
+          </li>
+          <li data-category="locs">
+            <span class="picker__name">Retwist, wash &amp; deep condition</span>
+            <span class="picker__meta"><span class="fill">[[PRICE]]</span></span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Retwist, wash &amp; deep condition" aria-label="Book: Retwist, wash &amp; deep condition">Book</a>
+          </li>
+          <li data-category="locs">
+            <span class="picker__name">Retwist + style</span>
+            <span class="picker__meta"><span class="fill">[[PRICE]]</span></span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Retwist + style" aria-label="Book: Retwist + style">Book</a>
+          </li>
+          <li data-category="locs">
+            <span class="picker__name">Interlocking maintenance</span>
+            <span class="picker__meta"><span class="fill">[[PRICE]]</span></span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Interlocking maintenance" aria-label="Book: Interlocking maintenance">Book</a>
+          </li>
+          <li data-category="locs">
+            <span class="picker__name">Loc repair</span>
+            <span class="picker__meta"><span class="fill">[[PRICE]]</span></span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Loc repair" aria-label="Book: Loc repair">Book</a>
+          </li>
+          <li data-category="locs">
+            <span class="picker__name">No Retwist Styles</span>
+            <span class="picker__meta">30 min &middot; $25</span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="No Retwist Styles" aria-label="Book: No Retwist Styles">Book</a>
+          </li>
+          </ul>
+        </div>
+
+        <div class="picker-group reveal" data-group>
+          <h3 class="service-group__title">Braids &amp; twists</h3>
+          <ul class="picker">
+          <li data-category="braids">
+            <span class="picker__name">Small Men&rsquo;s Twists on Natural Hair</span>
+            <span class="picker__meta">5 h &middot; $95</span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Small Men&rsquo;s Twists on Natural Hair" aria-label="Book: Small Men&rsquo;s Twists on Natural Hair">Book</a>
+          </li>
+          <li data-category="braids">
+            <span class="picker__name">Medium Men&rsquo;s Twists on Natural Hair</span>
+            <span class="picker__meta">3 h 30 min &middot; $65</span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Medium Men&rsquo;s Twists on Natural Hair" aria-label="Book: Medium Men&rsquo;s Twists on Natural Hair">Book</a>
+          </li>
+          <li data-category="braids">
+            <span class="picker__name">Knotless braids</span>
+            <span class="picker__meta"><span class="fill">[[PRICE]]</span></span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Knotless braids" aria-label="Book: Knotless braids">Book</a>
+          </li>
+          <li data-category="braids">
+            <span class="picker__name">Box braids</span>
+            <span class="picker__meta"><span class="fill">[[PRICE]]</span></span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Box braids" aria-label="Book: Box braids">Book</a>
+          </li>
+          <li data-category="braids">
+            <span class="picker__name">Two-strand twists</span>
+            <span class="picker__meta"><span class="fill">[[PRICE]]</span></span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Two-strand twists" aria-label="Book: Two-strand twists">Book</a>
+          </li>
+          <li data-category="braids">
+            <span class="picker__name">Cornrows</span>
+            <span class="picker__meta"><span class="fill">[[PRICE]]</span></span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Cornrows" aria-label="Book: Cornrows">Book</a>
+          </li>
+          <li data-category="braids">
+            <span class="picker__name">Children&rsquo;s braids</span>
+            <span class="picker__meta"><span class="fill">[[PRICE]]</span></span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Children&rsquo;s braids" aria-label="Book: Children&rsquo;s braids">Book</a>
+          </li>
+          </ul>
+        </div>
+
+        <div class="picker-group reveal" data-group>
+          <h3 class="service-group__title">Henna &amp; body art</h3>
+          <ul class="picker">
+          <li data-category="henna">
+            <span class="picker__name">Henna Paste — One Hand Design</span>
+            <span class="picker__meta">15 min &middot; $15</span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Henna Paste — One Hand Design" aria-label="Book: Henna Paste — One Hand Design">Book</a>
+          </li>
+          <li data-category="henna">
+            <span class="picker__name">Henna Paste — One Arm Sleeve</span>
+            <span class="picker__meta">35 min &middot; $45</span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Henna Paste — One Arm Sleeve" aria-label="Book: Henna Paste — One Arm Sleeve">Book</a>
+          </li>
+          <li data-category="henna">
+            <span class="picker__name">Jagua Temporary Tattoo — One Hand</span>
+            <span class="picker__meta">15 min &middot; $20</span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Jagua Temporary Tattoo — One Hand" aria-label="Book: Jagua Temporary Tattoo — One Hand">Book</a>
+          </li>
+          <li data-category="henna">
+            <span class="picker__name">Jagua Gel Temporary Tattoo — One Arm Sleeve</span>
+            <span class="picker__meta">35 min &middot; $60</span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Jagua Gel Temporary Tattoo — One Arm Sleeve" aria-label="Book: Jagua Gel Temporary Tattoo — One Arm Sleeve">Book</a>
+          </li>
+          <li data-category="henna">
+            <span class="picker__name">Henna — feet &amp; ankles</span>
+            <span class="picker__meta"><span class="fill">[[PRICE]]</span></span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Henna — feet &amp; ankles" aria-label="Book: Henna — feet &amp; ankles">Book</a>
+          </li>
+          <li data-category="henna">
+            <span class="picker__name">Bridal henna</span>
+            <span class="picker__meta"><span class="fill">[[PRICE]]</span></span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Bridal henna" aria-label="Book: Bridal henna">Book</a>
+          </li>
+          <li data-category="henna">
+            <span class="picker__name">Events &amp; groups</span>
+            <span class="picker__meta"><span class="fill">[[PRICE]]</span></span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Events &amp; groups" aria-label="Book: Events &amp; groups">Book</a>
+          </li>
+          <li data-category="henna">
+            <span class="picker__name">Hair henna treatment</span>
+            <span class="picker__meta"><span class="fill">[[PRICE]]</span></span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Hair henna treatment" aria-label="Book: Hair henna treatment">Book</a>
+          </li>
+          </ul>
+        </div>
+
+        <div class="picker-group reveal" data-group>
+          <h3 class="service-group__title">Treatments</h3>
+          <ul class="picker">
+          <li data-category="care">
+            <span class="picker__name">Clarifying detox wash</span>
+            <span class="picker__meta"><span class="fill">[[PRICE]]</span></span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Clarifying detox wash" aria-label="Book: Clarifying detox wash">Book</a>
+          </li>
+          <li data-category="care">
+            <span class="picker__name">Deep conditioning treatment</span>
+            <span class="picker__meta"><span class="fill">[[PRICE]]</span></span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Deep conditioning treatment" aria-label="Book: Deep conditioning treatment">Book</a>
+          </li>
+          <li data-category="care">
+            <span class="picker__name">Scalp treatment</span>
+            <span class="picker__meta"><span class="fill">[[PRICE]]</span></span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Scalp treatment" aria-label="Book: Scalp treatment">Book</a>
+          </li>
+          <li data-category="care">
+            <span class="picker__name">Wash &amp; dry</span>
+            <span class="picker__meta"><span class="fill">[[PRICE]]</span></span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="Wash &amp; dry" aria-label="Book: Wash &amp; dry">Book</a>
+          </li>
+          </ul>
+        </div>
+
+    <p class="small center" style="margin-top:1.5rem">
+      Full descriptions are on the <a href="services.html">services page</a>.
+      Prices are a starting point; anything that would change yours is
+      discussed before the work begins.
+    </p>
   </div>
 </section>
 
-<!-- ====================== WHAT HAPPENS NEXT ===================== -->
-<section class="section section--card">
-  <div class="wrap wrap--narrow reveal">
-    <p class="eyebrow">After you book</p>
-    <h2>What happens next</h2>
+<!-- ====================== THE REQUEST FORM ====================== -->
+<!-- =====================================================================
+     CONNECTING THIS FORM
+     It needs a form service to deliver the messages — a static website
+     cannot send email on its own. All of these have a free tier and take
+     about two minutes:
+         · Formspree   https://formspree.io
+         · Web3Forms   https://web3forms.com
+         · Basin       https://usebasin.com
+     Create a form there, copy the URL it gives you, and replace
+     [[FORM_ENDPOINT]] in the action attribute below.
+     Until then, pressing Send shows the email and DM details instead of
+     failing silently.
 
-    <ol class="steps" style="margin-top:2.5rem">
-      <li class="step">
-        <h3>Send your deposit</h3>
-        <p>
-          Straight away, e-transfer <strong>$20</strong> to
-          <a href="mailto:rootsofcare.vv@gmail.com">rootsofcare.vv@gmail.com</a>.
-          You have three hours — after that the slot is released. Put your
-          name in the message so it can be matched to your booking.
+     (If you ever want a live calendar here instead, any booking platform's
+     embed code can be dropped into this section in place of the form.)
+     ===================================================================== -->
+<section class="section section--card" id="request">
+  <div class="wrap wrap--narrow reveal">
+    <p class="eyebrow">Step two</p>
+    <h2>Your details</h2>
+    <p class="lead">
+      Only your name, email and service are required — everything else just
+      helps us plan the appointment properly.
+    </p>
+
+    <form class="form" data-booking-form method="POST" action="[[FORM_ENDPOINT]]"
+          style="margin-top:2.5rem">
+
+      <input type="hidden" name="_subject" value="New booking request — Roots of Care">
+
+      <div class="form__row">
+        <div class="field">
+          <label for="b-name">Name <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="b-name" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="b-email">Email <span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="b-email" name="email" autocomplete="email" required>
+          <span class="hint">Where we&rsquo;ll send your confirmation.</span>
+        </div>
+      </div>
+
+      <div class="form__row">
+        <div class="field">
+          <label for="b-phone">Phone <span class="hint-inline">optional</span></label>
+          <input type="tel" id="b-phone" name="phone" autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="b-visit">Have you been before? <span class="hint-inline">optional</span></label>
+          <select id="b-visit" name="first_visit">
+            <option value="">Choose one…</option>
+            <option>This would be my first visit</option>
+            <option>I&rsquo;ve been before</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="b-service">Service <span class="req" aria-hidden="true">*</span></label>
+        <select id="b-service" name="service" required>
+              <option value="">Choose a service…</option>
+              <optgroup label="Locks">
+                <option>Loc consultation</option>
+                <option>Loc starting</option>
+                <option>Retwist &amp; maintenance</option>
+                <option>Retwist, wash &amp; deep condition</option>
+                <option>Retwist + style</option>
+                <option>Interlocking maintenance</option>
+                <option>Loc repair</option>
+                <option>No Retwist Styles</option>
+              </optgroup>
+              <optgroup label="Braids &amp; twists">
+                <option>Small Men&rsquo;s Twists on Natural Hair</option>
+                <option>Medium Men&rsquo;s Twists on Natural Hair</option>
+                <option>Knotless braids</option>
+                <option>Box braids</option>
+                <option>Two-strand twists</option>
+                <option>Cornrows</option>
+                <option>Children&rsquo;s braids</option>
+              </optgroup>
+              <optgroup label="Henna &amp; body art">
+                <option>Henna Paste — One Hand Design</option>
+                <option>Henna Paste — One Arm Sleeve</option>
+                <option>Jagua Temporary Tattoo — One Hand</option>
+                <option>Jagua Gel Temporary Tattoo — One Arm Sleeve</option>
+                <option>Henna — feet &amp; ankles</option>
+                <option>Bridal henna</option>
+                <option>Events &amp; groups</option>
+                <option>Hair henna treatment</option>
+              </optgroup>
+              <optgroup label="Treatments">
+                <option>Clarifying detox wash</option>
+                <option>Deep conditioning treatment</option>
+                <option>Scalp treatment</option>
+                <option>Wash &amp; dry</option>
+              </optgroup>
+              <option>Something else</option>
+        </select>
+        <span class="hint">Pressing <em>Book</em> above fills this in for you.</span>
+      </div>
+
+      <div class="form__row">
+        <div class="field">
+          <label for="b-date">Preferred date <span class="hint-inline">optional</span></label>
+          <input type="date" id="b-date" name="preferred_date">
+        </div>
+        <div class="field">
+          <label for="b-time">Preferred time <span class="hint-inline">optional</span></label>
+          <select id="b-time" name="preferred_time">
+            <option value="">Choose one…</option>
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+            <option>I&rsquo;m flexible</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="b-allergies">
+          Allergies or sensitivities <span class="hint-inline">optional</span>
+        </label>
+        <input type="text" id="b-allergies" name="allergies"
+               placeholder="e.g. berries, eucalyptus, lavender, plant dyes, sensitive scalp">
+        <span class="hint">
+          Important for body art: jagua is not suitable if you react to
+          berries, eucalyptus or lavender.
+          <a href="henna.html">More on henna and jagua</a>.
+        </span>
+      </div>
+
+      <div class="field">
+        <label for="b-message">
+          More information <span class="hint-inline">optional</span>
+        </label>
+        <textarea id="b-message" name="message" rows="8"
+                  placeholder="Tell us anything that helps — the state of your hair, how long since your last appointment, the design you have in mind, roughly how much coverage you want, an event you're getting ready for, or any questions at all."></textarea>
+        <span class="hint">
+          The more you write, the better we can plan the time you&rsquo;ll need.
+        </span>
+      </div>
+
+      <!-- Explicit consent, not pre-ticked (Québec Law 25) -->
+      <div class="field">
+        <label class="consent" for="b-consent">
+          <input type="checkbox" id="b-consent" name="consent" value="yes" required>
+          <span>
+            I agree that Roots of Care may use the information above to answer
+            my request and arrange my appointment. It will not be used for
+            anything else, and it will not be shared with anyone else. You can
+            ask for your information to be corrected or deleted at any time —
+            see the <a href="privacy-policy.html">privacy policy</a>.
+            <span class="req" aria-hidden="true">*</span>
+          </span>
+        </label>
+      </div>
+
+      <!-- Simple spam trap — leave this exactly as it is -->
+      <div style="position:absolute;left:-9999px" aria-hidden="true">
+        <label for="b-website">Leave this field empty</label>
+        <input type="text" id="b-website" name="_gotcha" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div>
+        <button class="btn" type="submit">Send booking request</button>
+        <p class="small" style="margin-top:1rem">
+          <span class="req" aria-hidden="true">*</span> Required. Sending this
+          does not confirm an appointment — we&rsquo;ll reply with a time
+          first.
         </p>
-      </li>
-      <li class="step">
-        <h3>Confirmation</h3>
-        <p>
-          Once the deposit is received you get a confirmation with your
-          service, date and time, along with the studio address.
-        </p>
-      </li>
-      <li class="step">
-        <h3>Prepare</h3>
-        <p>
-          Come with clean, product-free hair unless a wash is included. For
-          henna or jagua, arrive with clean, oil-free skin.
-          <a href="hair.html">Full preparation guide</a>.
-        </p>
-      </li>
-      <li class="step">
-        <h3>Your appointment</h3>
-        <p>
-          Arrive a few minutes early. The remaining balance is settled at the
-          end, with your $20 deposit already deducted.
-        </p>
-      </li>
-    </ol>
+      </div>
+
+      <p class="form-note" data-form-note hidden>
+        <strong>The form isn&rsquo;t connected yet.</strong>
+        In the meantime, please write to
+        <a href="mailto:rootsofcare.vv@gmail.com">rootsofcare.vv@gmail.com</a>,
+        or send a DM on
+        <a href="https://www.instagram.com/roots.of.care/" target="_blank" rel="noopener">Instagram</a> or
+        <a href="https://www.snapchat.com/add/aeilmyy" target="_blank" rel="noopener">Snapchat</a>.
+        <br><br>
+        <span class="small">Site owner: see the comment above this form in
+        <code>booking.html</code> to connect it in about two minutes.</span>
+      </p>
+    </form>
   </div>
 </section>
 
 <!-- ======================= HELP / CONTACT ======================= -->
 <section class="section">
   <div class="wrap wrap--narrow center reveal">
-    <h2>Not sure what to book?</h2>
+    <h2>Rather just message?</h2>
     <p class="lead measure" style="margin-inline:auto">
-      Describe your hair or the design you have in mind and we will tell you
-      exactly which service fits — and roughly how long it will take.
+      Describe your hair or the design you have in mind and we&rsquo;ll tell
+      you which service fits, and roughly how long it will take.
     </p>
     <div class="btn-row">
-      <a class="btn btn--ghost" href="contact.html">Send a message</a>
-      <a class="btn btn--ghost" href="services.html">Browse services</a>
+      <a class="btn btn--ghost" href="https://www.instagram.com/roots.of.care/" target="_blank" rel="noopener">Instagram DM</a>
+      <a class="btn btn--ghost" href="https://www.snapchat.com/add/aeilmyy" target="_blank" rel="noopener">Snapchat</a>
+      <a class="btn btn--ghost" href="contact.html">Contact page</a>
     </div>
   </div>
 </section>

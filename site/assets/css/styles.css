@@ -668,6 +668,48 @@ body.nav-open { overflow: hidden; }
 .service__duration { color: var(--text-muted); }
 .service[hidden] { display: none; }
 
+/* =================== BOOKING SERVICE PICKER =================== */
+.picker-group { margin-bottom: clamp(2rem, 4vw, 3rem); }
+.picker { list-style: none; margin: 0; padding: 0; }
+.picker li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem 1.2rem;
+  margin: 0;
+  padding: .85rem 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.picker li:first-child { border-top: 1px solid var(--line-soft); }
+.picker__name {
+  flex: 1 1 13rem;
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 300;
+  letter-spacing: .05em;
+  color: var(--brand-brown);
+}
+.picker__meta {
+  font-family: var(--font-display);
+  font-size: .85rem;
+  letter-spacing: .08em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.picker .btn { flex: 0 0 auto; }
+
+/* Required-field marker and inline "optional" note on form labels */
+.req { color: var(--brand-brown); }
+.hint-inline {
+  font-family: var(--font-body);
+  font-size: .72rem;
+  font-weight: 400;
+  letter-spacing: .02em;
+  text-transform: none;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
 /* ========================== STEPS ============================= */
 .steps { counter-reset: step; list-style: none; padding: 0; margin: 0; }
 .step {
@@ -870,12 +912,17 @@ input:focus, select:focus, textarea:focus {
 }
 input::placeholder, textarea::placeholder { color: var(--brand-taupe); opacity: 1; }
 
-.consent {
+.consent,
+.field label.consent {
   display: flex;
   align-items: flex-start;
   gap: .85rem;
+  font-family: var(--font-body);
   font-size: .9rem;
+  font-weight: 400;
   line-height: 1.65;
+  letter-spacing: .01em;
+  text-transform: none;
   color: var(--text-muted);
 }
 .consent input[type="checkbox"] {

@@ -163,21 +163,100 @@
      still contains "[["), we block the submission and show
      the instructions plus the email fallback.
      --------------------------------------------------------- */
-  var form = document.querySelector("[data-contact-form]");
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      var action = form.getAttribute("action") || "";
-      if (action === "" || action.indexOf("[[") !== -1) {
-        e.preventDefault();
-        var note = form.querySelector("[data-form-note]");
-        if (note) {
-          note.hidden = false;
-          note.setAttribute("role", "status");
-          note.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+  Array.prototype.forEach.call(
+    document.querySelectorAll("[data-contact-form], [data-booking-form]"),
+    function (form) {
+      form.addEventListener("submit", function (e) {
+        var action = form.getAttribute("action") || "";
+        if (action === "" || action.indexOf("[[") !== -1) {
+          e.preventDefault();
+          var note = form.querySelector("[data-form-note]");
+          if (note) {
+            note.hidden = false;
+            note.setAttribute("role", "status");
+            note.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+          }
         }
-      }
+      });
+    }
+  );
+
+  /* ---------------------------------------------------------
+     6b) "Book" BUTTONS -> THE BOOKING FORM
+     Every Book button carries data-service. On the booking page
+     the button fills the drop-down and scrolls down to the form.
+     From the services page it follows its link instead, which
+     carries ?service=... so the booking page can read it there.
+     --------------------------------------------------------- */
+  var SERVICE_KEY = "roc-service";
+
+  function selectService(name) {
+    var select = document.getElementById("b-service");
+    if (!select || !name) return false;
+    var matched = false;
+    Array.prototype.forEach.call(select.options, function (opt) {
+      // compare loosely: punctuation and spacing vary between sources
+      var a = opt.text.replace(/\s+/g, " ").trim().toLowerCase();
+      var b = String(name).replace(/\s+/g, " ").trim().toLowerCase();
+      if (a === b) { select.value = opt.value || opt.text; matched = true; }
     });
+    if (matched) {
+      select.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+    return matched;
   }
+
+  function formIsOnScreen() {
+    var form = document.querySelector("[data-booking-form]");
+    // offsetParent is null when the element is hidden, which is how the
+    // single-file preview hides the pages you are not looking at.
+    return !!form && form.offsetParent !== null;
+  }
+
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-service]");
+    if (!btn) return;
+    var name = btn.getAttribute("data-service");
+    try { window.sessionStorage.setItem(SERVICE_KEY, name); } catch (err) {}
+
+    if (formIsOnScreen()) {
+      e.preventDefault();
+      selectService(name);
+      var target = document.getElementById("request");
+      if (target) {
+        target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+      }
+      var select = document.getElementById("b-service");
+      if (select) window.setTimeout(function () { select.focus({ preventScroll: true }); }, 400);
+    }
+    // otherwise the link navigates to the booking page, carrying ?service=
+  });
+
+  function applyPendingService() {
+    var select = document.getElementById("b-service");
+    if (!select) return;
+    var name = null;
+    try {
+      var params = new URLSearchParams(window.location.search);
+      name = params.get("service");
+    } catch (err) {}
+    if (!name) {
+      try { name = window.sessionStorage.getItem(SERVICE_KEY); } catch (err) {}
+    }
+    if (name && selectService(name)) {
+      try { window.sessionStorage.removeItem(SERVICE_KEY); } catch (err) {}
+      if (window.location.hash === "#request") {
+        window.setTimeout(function () {
+          var t = document.getElementById("request");
+          if (t) t.scrollIntoView({ behavior: "auto", block: "start" });
+        }, 60);
+      }
+    }
+  }
+
+  applyPendingService();
+  // the single-file preview fires this when it swaps to another page
+  window.addEventListener("roc:pageshow", applyPendingService);
 
   /* ---------------------------------------------------------
      7) COOKIE BANNER — Québec Law 25 / PIPEDA friendly

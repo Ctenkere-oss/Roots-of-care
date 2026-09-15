@@ -54,22 +54,7 @@ description: Get in touch with Roots of Care in Montréal about locs, natural ha
           <div class="field">
             <label for="service">Service you&rsquo;re interested in</label>
             <select id="service" name="service">
-              <option value="">Choose one…</option>
-              <option>Loc consultation</option>
-              <option>Loc starting</option>
-              <option>Retwist &amp; maintenance</option>
-              <option>Loc repair</option>
-              <option>Loc styling</option>
-              <option>Braids &amp; twists</option>
-              <option>Men&rsquo;s twists on natural hair</option>
-              <option>Henna — one hand</option>
-              <option>Henna — one arm sleeve</option>
-              <option>Jagua — one hand</option>
-              <option>Jagua — one arm sleeve</option>
-              <option>Bridal henna</option>
-              <option>Event or group booking</option>
-              <option>Hair treatment</option>
-              <option>Something else</option>
+{{SERVICE_OPTIONS}}
             </select>
           </div>
         </div>
@@ -82,7 +67,7 @@ description: Get in touch with Roots of Care in Montréal about locs, natural ha
 
         <!-- Explicit consent, not pre-ticked (Québec Law 25) -->
         <div class="field">
-          <label class="consent" for="consent" style="text-transform:none;letter-spacing:normal;font-family:var(--font-body);font-size:.9rem;color:var(--text-muted)">
+          <label class="consent" for="consent">
             <input type="checkbox" id="consent" name="consent" value="yes" required>
             <span>
               I agree that Roots of Care may use the information above to

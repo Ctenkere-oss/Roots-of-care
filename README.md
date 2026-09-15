@@ -83,15 +83,22 @@ These came across from `rootsofcare.setmore.com` and need no further work:
 
 ### Essentials (the site is not ready to launch without these)
 
-- [ ] **`[[PRICE]]` and `[[DURATION]]`** — the remaining 20 services in
-      `services.html` (the 7 above already have real numbers). Format:
-      `$120` or `from $120`, and `3 h` or `90 min`.
+- [ ] **`[[PRICE]]` and `[[DURATION]]`** — the remaining 20 services.
+      **Edit them in one place: `src/services.py`**, then run
+      `python3 tools/build.py`. That file feeds the services page, the
+      booking page picker and both form drop-downs, so a price can never end
+      up different in two places. Format: `$120` or `from $120`, and `3 h`
+      or `90 min`. (If you would rather not run the build script, you can
+      edit `site/services.html` and `site/booking.html` by hand instead —
+      just remember to change both.)
 - [ ] **`[[PHONE]]`** — footer of every page, plus contact and booking.
       If you'd rather not publish a number, delete the whole line instead.
 - [ ] **`[[HOURS]]`** — seven days in `contact.html`, left blank for now.
       Write `Closed` for days you don't work. (Setmore showed a 22:00
       closing time but not the full week.)
-- [ ] **`[[CALENDAR_URL]]`** — `https://rootsofcare.setmore.com` (see §5).
+- [ ] **`[[FORM_ENDPOINT]]`** — connects both the booking form and the
+      contact form (see §5). Until then they show your email and DM links
+      instead of failing.
 - [ ] **`[[NEIGHBOURHOOD / AREA]]`** — the part of Montréal you serve
       (`about.html`, `contact.html`).
 - [ ] **Surname on the privacy policy** (optional). The page names Yamiley
@@ -111,7 +118,7 @@ These came across from `rootsofcare.setmore.com` and need no further work:
 ### Privacy policy specifics
 
 - [ ] **`[[HOSTING PROVIDER]]`** — whoever you host with.
-- [ ] **`[[FORM SERVICE]]`** — the contact form service you connect (§6).
+- [ ] **`[[FORM SERVICE]]`** — the form service you connect (§5).
 - [ ] **`[[ANALYTICS TOOL, or "none"]]`** — write `none` if you don't add one.
 
 ### Images
@@ -145,48 +152,48 @@ Right now the logo is drawn with web fonts as a stand-in. To use the real one:
 
 ---
 
-## 5. Connect the booking calendar
+## 5. Connect the two forms
 
-This is the one piece the site cannot do on its own — it needs your booking
-platform (Fresha, Square Appointments, Acuity, Setmore, Booksy, Calendly…).
+Booking now happens on your own site: someone picks a service on the booking
+page, the form below it fills itself in, and they send you a request. You
+reply with a time, and they send the $20 e-transfer.
 
-1. Open `site/booking.html` and find the big comment block titled
-   `BOOKING CALENDAR AREA`. Full step-by-step instructions are in there.
-2. In Setmore, look for the section about adding booking to your own website
-   — usually under Settings → *Booking Page*, or *Apps & Integrations*. It
-   offers both an embed snippet and a plain link
-   (`https://rootsofcare.setmore.com`).
-3. Either paste the `<iframe>` code it gives you inside
-   `<div id="booking-embed">`, **or** just replace `[[CALENDAR_URL]]` with your
-   booking link in the two places it appears on that page.
-4. Setmore does not collect the deposit, so the booking page explains the
-   e-transfer step instead. If you ever move to a platform that can take the
-   $20 at the time of booking, simplify that section to match.
-
-**Until you do this**, the booking page automatically shows a fallback block
-with a "Book on our platform" button, an Instagram DM link and your email, so
-the page is never broken or empty.
-
----
-
-## 6. Connect the contact form
-
-The contact form needs a service to deliver the messages (a static site can't
-send email by itself). All of these have a free tier and take about two
-minutes:
+Both the booking form and the contact form need a form service to deliver
+the messages — a static site cannot send email by itself. These all have a
+free tier and take about two minutes:
 
 - [Formspree](https://formspree.io)
 - [Web3Forms](https://web3forms.com)
 - [Basin](https://usebasin.com)
 
-Create a form there, copy the URL it gives you, and in `site/contact.html`
-replace `[[FORM_ENDPOINT]]` in the line `action="[[FORM_ENDPOINT]]"`.
+Create a form there, copy the URL it gives you, and replace
+`[[FORM_ENDPOINT]]` in **two** files:
 
-Until then, pressing *Send message* shows a polite note with your email and
-Instagram instead of failing silently. Remember to add the service name to
-`[[FORM SERVICE]]` in the privacy policy.
+- `site/booking.html` — `action="[[FORM_ENDPOINT]]"`
+- `site/contact.html` — `action="[[FORM_ENDPOINT]]"`
 
----
+You can use the same endpoint for both; the booking form sends a hidden
+`_subject` field so the two are easy to tell apart in your inbox.
+
+Until you do this, pressing Send shows a polite note with your email,
+Instagram and Snapchat instead of failing silently. Remember to add the
+service name to `[[FORM SERVICE]]` in the privacy policy.
+
+### If you ever want a live calendar instead
+
+Any booking platform's embed code can be dropped into the form section of
+`booking.html` in place of the form. There is a comment in that file marking
+the spot.
+
+## 6. Change what's on the booking form
+
+The questions are in `site/booking.html`. Required: name, email, service and
+the consent tick. Optional: phone, whether they've been before, preferred
+date, preferred time, allergies, and the large "more information" box.
+
+To remove a question, delete its `<div class="field">` block. To make one
+required, add `required` to its input. To add one, copy an existing field
+block and change the `id`, the `for` and the `name`.
 
 ## 7. Replace the photos
 

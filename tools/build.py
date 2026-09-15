@@ -24,10 +24,14 @@ import posixpath
 import re
 import sys
 from datetime import date
+from urllib.parse import quote
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "src", "pages")
 OUT = os.path.join(ROOT, "site")
+
+sys.path.insert(0, os.path.join(ROOT, "src"))
+import services as SERVICES          # the one place prices and durations live
 
 # ---------------------------------------------------------------------------
 # GENERAL SETTINGS — set these once
@@ -147,6 +151,92 @@ def social_links(light=False):
             {ICON_SNAPCHAT}<span>{SNAPCHAT_HANDLE}</span>
           </a></li>
         </ul>'''
+
+
+# ---------------------------------------------------------------------------
+# THE SERVICE LIST, RENDERED THREE WAYS
+# All three come from src/services.py, so a price only ever has to change once.
+# ---------------------------------------------------------------------------
+def _plain(name):
+    """The service name as plain text — what the browser shows once the HTML
+    entities are decoded. Used for the ?service= query string, so that it
+    matches the <option> text exactly when the form reads it back."""
+    return (name.replace("&amp;", "&").replace("&rsquo;", "\u2019")
+                .replace("&mdash;", "\u2014").replace("&nbsp;", " "))
+
+
+def _cell(value, placeholder):
+    """A real value, or a marked placeholder the owner still has to fill in."""
+    return value if value else '<span class="fill">%s</span>' % placeholder
+
+
+def service_filters():
+    """The category buttons at the top of the services page."""
+    out = []
+    for i, (key, label) in enumerate(SERVICES.FILTERS):
+        out.append('      <button class="filter-btn" type="button" data-filter="%s" '
+                   'aria-pressed="%s">%s</button>' % (key, "true" if i == 0 else "false", label))
+    return "\n".join(out)
+
+
+def service_list(booking_href):
+    """The full list, with descriptions — the services page."""
+    blocks = []
+    for cat, title, note, svcs in SERVICES.GROUPS:
+        note_html = ('\n        <p class="small" style="margin:-.6rem 0 1.6rem">%s</p>' % note) if note else ""
+        rows = []
+        for name, dur, price, desc in svcs:
+            rows.append(f'''        <div class="service" data-category="{cat}">
+          <div>
+            <h3 class="service__name">{name}</h3>
+            <p class="service__desc">{desc}</p>
+          </div>
+          <p class="service__meta">
+            <span class="service__duration">{_cell(dur, "[[DURATION]]")}</span>
+            <span class="service__price">{_cell(price, "[[PRICE]]")}</span>
+          </p>
+          <a class="btn btn--ghost btn--sm" href="{booking_href}?service={quote(_plain(name))}#request"
+             data-service="{name}" aria-label="Book: {name}">Book</a>
+        </div>''')
+        blocks.append('      <div class="service-group reveal" data-group>\n'
+                      '        <h2 class="service-group__title">%s</h2>%s\n%s\n      </div>'
+                      % (title, note_html, "\n".join(rows)))
+    return "\n\n".join(blocks)
+
+
+def service_picker():
+    """The compact chooser on the booking page — name, price, Book."""
+    blocks = []
+    for cat, title, note, svcs in SERVICES.GROUPS:
+        rows = []
+        for name, dur, price, desc in svcs:
+            if price and dur:
+                meta = "%s &middot; %s" % (dur, price)
+            else:
+                meta = _cell(price, "[[PRICE]]")
+            rows.append(f'''          <li data-category="{cat}">
+            <span class="picker__name">{name}</span>
+            <span class="picker__meta">{meta}</span>
+            <a class="btn btn--ghost btn--sm" href="#request"
+               data-service="{name}" aria-label="Book: {name}">Book</a>
+          </li>''')
+        blocks.append('        <div class="picker-group reveal" data-group>\n'
+                      '          <h3 class="service-group__title">%s</h3>\n'
+                      '          <ul class="picker">\n%s\n          </ul>\n        </div>'
+                      % (title, "\n".join(rows)))
+    return "\n\n".join(blocks)
+
+
+def service_options():
+    """<option> tags for the service drop-down on the forms."""
+    out = ['              <option value="">Choose a service\u2026</option>']
+    for cat, title, note, svcs in SERVICES.GROUPS:
+        out.append('              <optgroup label="%s">' % title)
+        for name, dur, price, desc in svcs:
+            out.append('                <option>%s</option>' % name)
+        out.append('              </optgroup>')
+    out.append('              <option>Something else</option>')
+    return "\n".join(out)
 
 
 # ---------------------------------------------------------------------------
@@ -449,6 +539,10 @@ def expand(body, lang, self_path):
     for k, slug in SLUGS.items():
         body = body.replace("{{%s}}" % k.upper(), rel(self_path, slug[lang]))
     body = body.replace("{{LOGO_FULL}}", logo_full())
+    body = body.replace("{{SERVICE_FILTERS}}", service_filters())
+    body = body.replace("{{SERVICE_LIST}}", service_list(rel(self_path, SLUGS["booking"][lang])))
+    body = body.replace("{{SERVICE_PICKER}}", service_picker())
+    body = body.replace("{{SERVICE_OPTIONS}}", service_options())
     body = body.replace("{{INSTAGRAM}}", INSTAGRAM)
     body = body.replace("{{INSTAGRAM_HANDLE}}", INSTAGRAM_HANDLE)
     body = body.replace("{{SNAPCHAT}}", SNAPCHAT)

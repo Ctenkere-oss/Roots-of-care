@@ -214,21 +214,42 @@
           <div class="field">
             <label for="service">Service you&rsquo;re interested in</label>
             <select id="service" name="service">
-              <option value="">Choose one…</option>
-              <option>Loc consultation</option>
-              <option>Loc starting</option>
-              <option>Retwist &amp; maintenance</option>
-              <option>Loc repair</option>
-              <option>Loc styling</option>
-              <option>Braids &amp; twists</option>
-              <option>Men&rsquo;s twists on natural hair</option>
-              <option>Henna — one hand</option>
-              <option>Henna — one arm sleeve</option>
-              <option>Jagua — one hand</option>
-              <option>Jagua — one arm sleeve</option>
-              <option>Bridal henna</option>
-              <option>Event or group booking</option>
-              <option>Hair treatment</option>
+              <option value="">Choose a service…</option>
+              <optgroup label="Locks">
+                <option>Loc consultation</option>
+                <option>Loc starting</option>
+                <option>Retwist &amp; maintenance</option>
+                <option>Retwist, wash &amp; deep condition</option>
+                <option>Retwist + style</option>
+                <option>Interlocking maintenance</option>
+                <option>Loc repair</option>
+                <option>No Retwist Styles</option>
+              </optgroup>
+              <optgroup label="Braids &amp; twists">
+                <option>Small Men&rsquo;s Twists on Natural Hair</option>
+                <option>Medium Men&rsquo;s Twists on Natural Hair</option>
+                <option>Knotless braids</option>
+                <option>Box braids</option>
+                <option>Two-strand twists</option>
+                <option>Cornrows</option>
+                <option>Children&rsquo;s braids</option>
+              </optgroup>
+              <optgroup label="Henna &amp; body art">
+                <option>Henna Paste — One Hand Design</option>
+                <option>Henna Paste — One Arm Sleeve</option>
+                <option>Jagua Temporary Tattoo — One Hand</option>
+                <option>Jagua Gel Temporary Tattoo — One Arm Sleeve</option>
+                <option>Henna — feet &amp; ankles</option>
+                <option>Bridal henna</option>
+                <option>Events &amp; groups</option>
+                <option>Hair henna treatment</option>
+              </optgroup>
+              <optgroup label="Treatments">
+                <option>Clarifying detox wash</option>
+                <option>Deep conditioning treatment</option>
+                <option>Scalp treatment</option>
+                <option>Wash &amp; dry</option>
+              </optgroup>
               <option>Something else</option>
             </select>
           </div>
@@ -242,7 +263,7 @@
 
         <!-- Explicit consent, not pre-ticked (Québec Law 25) -->
         <div class="field">
-          <label class="consent" for="consent" style="text-transform:none;letter-spacing:normal;font-family:var(--font-body);font-size:.9rem;color:var(--text-muted)">
+          <label class="consent" for="consent">
             <input type="checkbox" id="consent" name="consent" value="yes" required>
             <span>
               I agree that Roots of Care may use the information above to

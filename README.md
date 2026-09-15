@@ -76,6 +76,8 @@ These came across from `rootsofcare.setmore.com` and need no further work:
 - 7 services with confirmed prices and durations: No Retwist Styles,
   Small and Medium Men's Twists, Henna one hand and one arm sleeve,
   Jagua one hand and one arm sleeve
+- The founder section on the About page: Yamile's name, her Haitian and
+  Cuban roots, and her photograph (`assets/img/yamile-henna.webp`)
 
 ### Essentials (the site is not ready to launch without these)
 
@@ -90,21 +92,19 @@ These came across from `rootsofcare.setmore.com` and need no further work:
 - [ ] **`[[CALENDAR_URL]]`** — `https://rootsofcare.setmore.com` (see §5).
 - [ ] **`[[NEIGHBOURHOOD / AREA]]`** — the part of Montréal you serve
       (`about.html`, `contact.html`).
-- [ ] **`[[FOUNDER NAME]]`** — `about.html` and `privacy-policy.html`.
-      The Setmore artist profile says **Yamiley**; confirm before publishing
-      it, since a name on a public site is a deliberate choice.
+- [ ] **Surname on the privacy policy.** The page names Yamile as the
+      person in charge of personal information; a full legal name is
+      stronger there than a first name alone.
 
 ### Content
 
 - [ ] **`[[TESTIMONIAL 1–3]]`** and **`[[FIRST NAME]]`** — three client
       reviews on the home page. Two or three sentences each reads best.
-- [ ] **About page draft** — the whole story section in `about.html` is a
-      draft written from the brief. Read it and make it sound like you.
-      It is marked with a `NOTE FOR THE SITE OWNER` comment in the file.
-- [ ] **`[[TRAINING, CERTIFICATIONS OR HOW YOU LEARNED]]`** and
-      **`[[NUMBER]]`** (years of practice) — `about.html`.
-- [ ] **`[[CREDIT VALIDITY]]`** — how long an unused paid service stays
-      valid (`booking-policies.html`).
+      (The Setmore page shows one 5-star review — worth asking that client
+      for a sentence.)
+- [ ] **About page wording** — the founder story in `about.html` was written
+      from what you told me. Read it through and change anything that
+      doesn't sound like you; it's your voice on the page, not mine.
 
 ### Privacy policy specifics
 
@@ -115,12 +115,10 @@ These came across from `rootsofcare.setmore.com` and need no further work:
 ### Images
 
 - [ ] **Logo** — see §4.
-- [ ] **Photos** — 23 image slots. Every one is a cream placeholder marked
-      with the size it wants, and each has an HTML comment above it saying
-      what the photo should show. See §7.
-
-> **Note:** none of the photos from the Instagram account were used, as
-> requested. Every image on the site right now is a placeholder.
+- [ ] **Photos** — 22 image slots still to fill. Each is a cream
+      placeholder marked with the size it wants, and each has an HTML
+      comment above it saying what the photo should show. See §7.
+      The founder portrait on the About page is already the real thing.
 
 ---
 

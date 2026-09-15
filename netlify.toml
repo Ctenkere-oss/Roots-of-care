@@ -1,0 +1,32 @@
+# ============================================================
+# Netlify configuration — Roots of Care
+# ------------------------------------------------------------
+# The website lives in the site/ folder, NOT at the root of this
+# repository. Without this file, a Netlify deploy connected to the
+# repo publishes the repo root, finds no index.html there, and every
+# address returns "page not found".
+#
+# With this file, connecting the repo needs no other setup: there is
+# no build step, Netlify just publishes the folder.
+# ============================================================
+
+[build]
+  publish = "site"
+
+# ------------------------------------------------------------
+# Sensible defaults for a brochure site.
+# ------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Deliberately a short cache: when a placeholder image is swapped for a
+# real photo under the same file name, visitors should see it quickly.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"

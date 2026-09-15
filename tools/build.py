@@ -242,8 +242,18 @@ def service_options():
 # ---------------------------------------------------------------------------
 # HELPERS
 # ---------------------------------------------------------------------------
+# The 404 page is the one page whose own URL is unknown: a host serves it at
+# whatever address the visitor asked for, so a relative "assets/css/styles.css"
+# would resolve against that address and miss. Only that page is built with
+# root-absolute paths; every other page stays relative, so the site still works
+# from a sub-folder or straight off the disk.
+ABSOLUTE_PATHS = False
+
+
 def rel(from_path, to_path):
-    """Relative path between two pages (also works when opened from disk)."""
+    """Path from one page to another. Root-absolute while ABSOLUTE_PATHS is on."""
+    if ABSOLUTE_PATHS:
+        return "/" + to_path
     return posixpath.relpath(to_path, posixpath.dirname(from_path) or ".")
 
 
@@ -534,7 +544,7 @@ def footer(lang, key, self_path):
 
 def expand(body, lang, self_path):
     """Replace the {{...}} tokens used inside the content files."""
-    prefix = "../" * self_path.count("/")
+    prefix = "/" if ABSOLUTE_PATHS else "../" * self_path.count("/")
     body = body.replace("{{P}}", prefix)
     for k, slug in SLUGS.items():
         body = body.replace("{{%s}}" % k.upper(), rel(self_path, slug[lang]))
@@ -615,7 +625,13 @@ def build_404():
   </div>
 </section>
 '''
-    write("404.html", render("en", "home", meta, body, self_path="404.html", noindex=True))
+    global ABSOLUTE_PATHS
+    ABSOLUTE_PATHS = True
+    try:
+        html = render("en", "home", meta, body, self_path="404.html", noindex=True)
+    finally:
+        ABSOLUTE_PATHS = False
+    write("404.html", html)
 
 
 # ---------------------------------------------------------------------------
